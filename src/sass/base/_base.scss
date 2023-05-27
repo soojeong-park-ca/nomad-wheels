@@ -1,7 +1,8 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+// GOOGLE FONTS INTER 300 ~ 800
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
   padding: 0;
@@ -9,19 +10,18 @@
   box-sizing: border-box;
 }
 
-// *:focus {
-//   outline: 2px solid v.$color-black;
-//   outline-style: dotted;
+*:focus {
+  outline: 2px solid v.$color-tertiary;
 
-//   &:not(:focus-visible) {
-//     outline: none;
-//   }
-// }
-// *:focus-visible {
-//   outline: 2px solid v.$color-black;
-//   outline-style: dotted;
-//   border-radius: 2px;
-// }
+  &:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid v.$color-tertiary;
+  border-radius: 2px;
+}
 
 html {
   width: 100%;
@@ -31,4 +31,40 @@ html {
 body {
   max-width: 100%;
   min-height: 100%;
+
+  background-color: v.$color-black;
+  color: v.$color-gray-light;
+
+  font-family: "Inter", sans-serif;
+  font-size: v.$font-s-xs;
+  font-weight: v.$font-w-m;
+  line-height: 1.5;
+
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+#root {
+  width: 100%;
+  max-width: 80rem; // 1280px
+}
+
+h1,
+h2,
+h3 {
+  color: v.$color-white;
+}
+
+p {
+  color: v.$color-gray-light;
+}
+
+a {
+  text-decoration: none;
+  border: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }

@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as v;
+
+.footer {
+  width: 100%;
+  text-align: center;
+
+  padding-block: 1.6rem;
+}
+
+.copyright {
+  color: inherit;
+  font-size: v.$font-s-2xs;
+  font-weight: inherit;
+  line-height: 1.64;
+  text-transform: uppercase;
+}
