@@ -1,0 +1,12 @@
+// MEDIA QUERY MANAGER
+@mixin respondMax($breakpoint) {
+  @media screen and (max-width: calc(calc($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
+
+@mixin respondMin($breakpoint) {
+  @media screen and (min-width: calc(calc($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
