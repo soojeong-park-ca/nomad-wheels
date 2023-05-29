@@ -7,18 +7,8 @@ import LogoutIcon from "./LogoutIcon";
 export default function Header() {
   const [mobile, setMobile] = useState(window.innerWidth <= 768);
   const [navOpen, setNavOpen] = useState(false);
-  // const activeStyles = {
-  //   color: "var(--color-text-default)",
-  //   fontWeight: "600",
-  //   textDecoration: "underline",
-  //   textUnderlineOffset: "3px",
-  //   border: "none",
-  // };
 
-  // function fakeLogOut() {
-  //   // fake logout
-  // }
-
+  // Open / Close mobile nav state
   function navToggleHandler() {
     setNavOpen(prevState => !prevState);
   }
@@ -44,15 +34,82 @@ export default function Header() {
   }, [window.innerWidth]);
 
   return (
-    <div className="header-wrapper">
+    <>
       <header className="header">
         <Link className="btn-logo btn-home" to="/">
           <i className="fa-solid fa-van-shuttle logo-icon"></i> VanVenture
         </Link>
         {mobile ? (
-          <button className="mobile-nav-btn" onClick={navToggleHandler}>
-            <i className="fa-solid fa-bars menu-icon"></i>
-          </button>
+          <>
+            <button className="mobile-nav-btn" onClick={navToggleHandler}>
+              {!navOpen ? (
+                <i className="fa-solid fa-bars menu-icon"></i>
+              ) : (
+                <i className="fa-solid fa-xmark menu-icon"></i>
+              )}
+            </button>
+            <nav
+              className={`mobile-nav ${
+                navOpen ? "mobile-nav--open" : "mobile-nav--closed"
+              }`}
+            >
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "mobile-nav-link mobile-nav-link--active"
+                    : "mobile-nav-link"
+                }
+                to="."
+                onClick={() => setNavOpen(false)}
+              >
+                <div>Home</div>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "mobile-nav-link mobile-nav-link--active"
+                    : "mobile-nav-link"
+                }
+                to="about"
+                onClick={() => setNavOpen(false)}
+              >
+                <div>About</div>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "mobile-nav-link mobile-nav-link--active"
+                    : "mobile-nav-link"
+                }
+                to="vans"
+                onClick={() => setNavOpen(false)}
+              >
+                <div>Vans</div>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "mobile-nav-link mobile-nav-link--active"
+                    : "mobile-nav-link"
+                }
+                to="login"
+                onClick={() => setNavOpen(false)}
+              >
+                <div>Login</div>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "mobile-nav-link mobile-nav-link--active"
+                    : "mobile-nav-link"
+                }
+                to="host"
+                onClick={() => setNavOpen(false)}
+              >
+                <div>Host</div>
+              </NavLink>
+            </nav>
+          </>
         ) : (
           <nav className="desktop-nav">
             <NavLink to="/login">Login</NavLink>
@@ -60,53 +117,15 @@ export default function Header() {
         )}
       </header>
 
-      <div></div>
-
       {mobile && (
         <>
           <div
-            className={`overlay ${!navOpen && "hidden"}`}
+            className={`overlay ${!navOpen ? "hidden" : ""}`}
             onClick={handleOverlayClick}
           ></div>
-          <nav
-            className={`mobile-nav ${
-              navOpen ? "mobile-nav--open" : "mobile-nav--closed"
-            }`}
-          >
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "mobile-nav-link mobile-nav-link--active"
-                  : "mobile-nav-link"
-              }
-              to="/about"
-            >
-              <div>About</div>
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "mobile-nav-link mobile-nav-link--active"
-                  : "mobile-nav-link"
-              }
-              to="/vans"
-            >
-              <div>Vans</div>
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "mobile-nav-link mobile-nav-link--active"
-                  : "mobile-nav-link"
-              }
-              to="/login"
-            >
-              <div>Login</div>
-            </NavLink>
-          </nav>
         </>
       )}
-    </div>
+    </>
   );
 }
 

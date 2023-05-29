@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as v;
+
+.host-navbar {
+  gap: 1.8rem;
+
+  font-size: 1.125rem;
+  font-weight: 500;
+  background-color: v.$color-black;
+
+  padding: 2rem 1.625rem;
+
+  a:hover,
+  a:active {
+    color: v.$color-black;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    border: none;
+  }
+}
