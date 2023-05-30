@@ -23,6 +23,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const vansCollectionRef = collection(db, "vans");
+const usersCollectionRef = collection(db, "users");
 
 //////////////////////////////////////////////
 // fetch fns
@@ -64,20 +65,33 @@ export async function fetchHostVan(id) {
   return vanData;
 }
 
-// export async function loginUser(creds) {
-//   const res = await fetch("/api/login", {
-//     method: "post",
-//     body: JSON.stringify(creds),
-//   });
-//   const data = await res.json();
+export async function loginUser({ email, password }) {
+  const allUsersSnapshot = await getDocs(usersCollectionRef);
+  const usersDataArr = allUsersSnapshot.docs.map(doc => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
 
-//   if (!res.ok) {
-//     throw {
-//       message: data.message,
-//       statusText: res.statusText,
-//       status: res.status,
-//     };
-//   }
+  if (!email || !password)
+    throw {
+      message: "Please enter email and password.",
+    };
 
-//   return data;
-// }
+  const currentUser = usersDataArr.find(user => user.email === email);
+
+  if (!currentUser || currentUser.password !== password) {
+    throw {
+      message: "Incorrect email or password.",
+    };
+  }
+
+  if (currentUser.password === password) {
+    const currentUserData = {
+      name: currentUser.name,
+      email: currentUser.email,
+      id: currentUser.id,
+    };
+
+    return currentUserData;
+  }
+}

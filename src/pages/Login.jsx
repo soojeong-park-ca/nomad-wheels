@@ -1,22 +1,70 @@
+import {
+  useLoaderData,
+  useActionData,
+  useNavigation,
+  Form,
+  redirect,
+} from "react-router-dom";
+
+import { loginUser } from "../api";
+
+export function loader({ request }) {
+  const url = new URL(request.url);
+  const message = url.searchParams.get("message");
+  // console.log(message); // You must log in first
+  return message;
+}
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const email = formData.get("email");
+  const password = formData.get("password");
+  const pathname =
+    new URL(request.url).searchParams.get("redirectTo") || "/host";
+  console.log("pathname: ", pathname);
+
+  try {
+    const userData = await loginUser({ email, password });
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ user: userData, loggedin: true })
+    );
+    return redirect("/host");
+  } catch (err) {
+    return err.message;
+  }
+}
+
 export default function Login() {
+  const redirectMessage = useLoaderData();
+  const errorMessage = useActionData();
+  const navigation = useNavigation();
+
   return (
     <section id="login" className="login">
-      <h1 className="headingPrimary">Sign in to your account</h1>
-      <Form method="post" replace className="loginForm">
+      <h1 className="heading-primary">Sign in to your account</h1>
+      {redirectMessage && (
+        <h3 className="redirect-message">&#9888; {redirectMessage}</h3>
+      )}
+      {errorMessage && (
+        <h3 className="error-message">&#9888; {errorMessage}</h3>
+      )}
+
+      <Form method="post" replace className="login-form">
         <input
-          id="inputEmail"
+          id="input-email"
           name="email"
           type="email"
           placeholder="Email address"
         />
         <input
-          id="inputPassword"
+          id="input-password"
           name="password"
           type="password"
           placeholder="Password"
         />
-        <button>
-          <Button className="btnOrange btnLogin">Sign in</Button>
+        <button style={{ backgroundColor: "yellow", padding: "1rem" }}>
+          {navigation.state === "submitting" ? "Signing in..." : "Sign in"}
         </button>
       </Form>
       <div className="signup">

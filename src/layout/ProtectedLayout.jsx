@@ -1,14 +1,6 @@
-import { NavLink, redirect, useOutlet } from "react-router-dom";
-import { useAuth } from "../hooks/AuthProvider";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function ProtectedLayout() {
-  const { user } = useAuth();
-  const outlet = useOutlet();
-
-  if (!user) {
-    return redirect("/");
-  }
-
   const activeStyles = {
     color: "v.$color-black",
     fontWeight: "700",
@@ -46,7 +38,7 @@ export default function ProtectedLayout() {
           Reviews
         </NavLink>
       </nav>
-      {outlet}
+      <Outlet />
     </>
   );
 }
