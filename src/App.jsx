@@ -18,6 +18,7 @@ import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
 
 import Error from "./components/Error";
+import { publishEvent } from "./utils/eventListeners";
 
 // import { requireAuth } from "./utils/requireAuth";
 

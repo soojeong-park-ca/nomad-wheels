@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 // import LoginIcon from "./LoginIcon";
 // import LogoutIcon from "./LogoutIcon";
@@ -7,7 +8,9 @@ import { Link, NavLink } from "react-router-dom";
 export default function Header() {
   const [mobile, setMobile] = useState(window.innerWidth <= 768);
   const [navOpen, setNavOpen] = useState(false);
-  const isLoggedIn = localStorage.getItem("loggedin");
+
+  const [isLoggedIn] = useLocalStorage("loggedin", null);
+  console.log("Header: ", isLoggedIn);
 
   // Open / Close mobile nav state
   function navToggleHandler() {
@@ -34,6 +37,15 @@ export default function Header() {
     }
     window.addEventListener("resize", handleWindowResize);
   }, [window.innerWidth]);
+
+  // Fake logout
+  const logoutHandler = () => {
+    const key = "loggedin";
+    const newValue = JSON.stringify(false);
+
+    localStorage.setItem(key, newValue);
+    publishEvent("login", { key, newValue });
+  };
 
   const displayMobileNav = (
     <>
@@ -93,29 +105,31 @@ export default function Header() {
         >
           <div>Host</div>
         </NavLink>
-        {/* LOGIN */}
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "mobile-nav-link mobile-nav-link--active"
-              : "mobile-nav-link"
-          }
-          to="login"
-          onClick={() => setNavOpen(false)}
-        >
-          <div>Sign in</div>
-        </NavLink>
-        {/* LOGOUT */}
-        <Link
-          className="mobile-nav-link"
-          to="login"
-          onClick={() => {
-            setNavOpen(false);
-            localStorage.removeItem("user");
-          }}
-        >
-          <div>Sign out</div>
-        </Link>
+
+        {!isLoggedIn ? (
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-nav-link mobile-nav-link--active"
+                : "mobile-nav-link"
+            }
+            to="login"
+            onClick={() => setNavOpen(false)}
+          >
+            <div>Sign in</div>
+          </NavLink>
+        ) : (
+          <Link
+            className="mobile-nav-link"
+            to="login"
+            onClick={() => {
+              setNavOpen(false);
+              logoutHandler();
+            }}
+          >
+            <div>Sign out</div>
+          </Link>
+        )}
       </nav>
     </>
   );

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import { loginUser } from "../api";
+import { publishEvent } from "../utils/eventListeners";
 
 export function loader({ request }) {
   const url = new URL(request.url);
@@ -21,16 +22,24 @@ export async function action({ request }) {
   const password = formData.get("password");
   const pathname =
     new URL(request.url).searchParams.get("redirectTo") || "/host";
-  console.log("pathname: ", pathname);
+  // console.log("pathname: ", pathname);
 
   try {
     const userData = await loginUser({ email, password });
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ user: userData, loggedin: true })
-    );
-    return redirect("/host");
+    const key = "loggedin";
+    const newValue = JSON.stringify(true);
+
+    localStorage.setItem(key, newValue);
+    publishEvent("login", { key, newValue });
+
+    return redirect(pathname);
   } catch (err) {
+    const key = "loggedin";
+    const newValue = JSON.stringify(false);
+
+    localStorage.setItem(key, newValue);
+    publishEvent("login", { key, newValue });
+
     return err.message;
   }
 }
