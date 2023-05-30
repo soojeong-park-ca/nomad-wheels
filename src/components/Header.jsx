@@ -103,7 +103,7 @@ export default function Header() {
           to="login"
           onClick={() => setNavOpen(false)}
         >
-          <div>Login</div>
+          <div>Sign in</div>
         </NavLink>
         {/* LOGOUT */}
         <Link
@@ -114,7 +114,7 @@ export default function Header() {
             localStorage.removeItem("user");
           }}
         >
-          <div>Logout</div>
+          <div>Sign out</div>
         </Link>
       </nav>
     </>

@@ -60,10 +60,40 @@ button {
   border: none;
 }
 
+section {
+  padding-inline: 1.625rem;
+}
+
 .hidden {
   display: none;
 }
 
+.loading-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 8px solid;
+  border-color: #ff8906 transparent #ff8906 transparent;
+  margin-top: 8rem;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .footer {
   width: 100%;
   text-align: center;
@@ -76,10 +106,6 @@ button {
   font-weight: inherit;
   line-height: 1.64;
   text-transform: uppercase;
-}
-
-.header-wrapper {
-  position: relative;
 }
 
 .header {
@@ -109,7 +135,9 @@ button {
 }
 
 .mobile-nav-btn {
+  padding: 0.5rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .menu-icon {
@@ -121,7 +149,7 @@ button {
   width: 100%;
   height: 100vh;
   position: absolute;
-  top: 6.25rem;
+  top: 0;
   left: 0;
   background-color: transparent;
   z-index: 999;
@@ -164,6 +192,7 @@ button {
   color: #fffffe;
   font-size: 1.5rem;
   padding: 0rem 2rem;
+  transition: all 0.15s ease;
 }
 .mobile-nav-link div::after {
   content: "";
@@ -176,7 +205,7 @@ button {
   width: 100%;
 }
 .mobile-nav-link:hover div, .mobile-nav-link--active div {
-  color: #fffffe;
+  color: #0f0e17;
 }
 .mobile-nav-link:hover div::after, .mobile-nav-link--active div::after {
   clip-path: polygon(20% 0%, 100% 0, 80% 100%, 0% 100%);
@@ -196,6 +225,21 @@ button {
   flex-direction: column;
   background-color: var(--color-primary-light);
   padding-top: 6.25rem;
+}
+
+.host-navbar {
+  gap: 1.8rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  background-color: #0f0e17;
+  padding: 2rem 1.625rem;
+}
+.host-navbar a:hover,
+.host-navbar a:active {
+  color: #0f0e17;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  border: none;
 }
 
 /*# sourceMappingURL=main.css.map */
