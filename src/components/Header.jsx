@@ -47,6 +47,80 @@ export default function Header() {
     publishEvent("login", { key, newValue });
   };
 
+  const navigationElements = (
+    <>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "mobile-nav-link mobile-nav-link--active"
+            : "mobile-nav-link"
+        }
+        to="."
+        onClick={() => setNavOpen(false)}
+      >
+        <div>Home</div>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "mobile-nav-link mobile-nav-link--active"
+            : "mobile-nav-link"
+        }
+        to="about"
+        onClick={() => setNavOpen(false)}
+      >
+        <div>About</div>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "mobile-nav-link mobile-nav-link--active"
+            : "mobile-nav-link"
+        }
+        to="vans"
+        onClick={() => setNavOpen(false)}
+      >
+        <div>Vans</div>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "mobile-nav-link mobile-nav-link--active"
+            : "mobile-nav-link"
+        }
+        to="host"
+        onClick={() => setNavOpen(false)}
+      >
+        <div>Host</div>
+      </NavLink>
+
+      {!isLoggedIn ? (
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "mobile-nav-link mobile-nav-link--active"
+              : "mobile-nav-link"
+          }
+          to="login"
+          onClick={() => setNavOpen(false)}
+        >
+          <div>Sign in</div>
+        </NavLink>
+      ) : (
+        <Link
+          className="mobile-nav-link"
+          to="login"
+          onClick={() => {
+            setNavOpen(false);
+            logoutHandler();
+          }}
+        >
+          <div>Sign out</div>
+        </Link>
+      )}
+    </>
+  );
+
   const displayMobileNav = (
     <>
       <button className="mobile-nav-btn" onClick={navToggleHandler}>
@@ -61,83 +135,13 @@ export default function Header() {
           navOpen ? "mobile-nav--open" : "mobile-nav--closed"
         }`}
       >
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "mobile-nav-link mobile-nav-link--active"
-              : "mobile-nav-link"
-          }
-          to="."
-          onClick={() => setNavOpen(false)}
-        >
-          <div>Home</div>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "mobile-nav-link mobile-nav-link--active"
-              : "mobile-nav-link"
-          }
-          to="about"
-          onClick={() => setNavOpen(false)}
-        >
-          <div>About</div>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "mobile-nav-link mobile-nav-link--active"
-              : "mobile-nav-link"
-          }
-          to="vans"
-          onClick={() => setNavOpen(false)}
-        >
-          <div>Vans</div>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "mobile-nav-link mobile-nav-link--active"
-              : "mobile-nav-link"
-          }
-          to="host"
-          onClick={() => setNavOpen(false)}
-        >
-          <div>Host</div>
-        </NavLink>
-
-        {!isLoggedIn ? (
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "mobile-nav-link mobile-nav-link--active"
-                : "mobile-nav-link"
-            }
-            to="login"
-            onClick={() => setNavOpen(false)}
-          >
-            <div>Sign in</div>
-          </NavLink>
-        ) : (
-          <Link
-            className="mobile-nav-link"
-            to="login"
-            onClick={() => {
-              setNavOpen(false);
-              logoutHandler();
-            }}
-          >
-            <div>Sign out</div>
-          </Link>
-        )}
+        {navigationElements}
       </nav>
     </>
   );
 
   const displayDesktopNav = (
-    <nav className="desktop-nav">
-      <NavLink to="/login">Login</NavLink>
-    </nav>
+    <nav className="desktop-nav">{navigationElements}</nav>
   );
 
   return (

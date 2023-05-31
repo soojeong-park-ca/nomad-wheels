@@ -9,6 +9,8 @@ import {
 import { loginUser } from "../api";
 import { publishEvent } from "../utils/eventListeners";
 
+let fetchedUserData;
+
 export function loader({ request }) {
   const url = new URL(request.url);
   const message = url.searchParams.get("message");
@@ -25,7 +27,8 @@ export async function action({ request }) {
   // console.log("pathname: ", pathname);
 
   try {
-    const userData = await loginUser({ email, password });
+    fetchedUserData = await loginUser({ email, password });
+    console.log(fetchedUserData);
     const key = "loggedin";
     const newValue = JSON.stringify(true);
 
