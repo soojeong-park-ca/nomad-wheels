@@ -1,5 +1,6 @@
 import { defer, useLoaderData } from "react-router-dom";
 import { requireAuth } from "../../utils/requireAuth";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export async function loader({ request }) {
   await requireAuth(request);
@@ -8,10 +9,13 @@ export async function loader({ request }) {
 }
 
 export default function Dashboard() {
+  const [userData] = useLocalStorage("userData", null);
+  console.log("userData from localStorage: ", userData);
+
   return (
     <>
       <h1>Dashboard</h1>
-      <h2>Welcome!</h2>
+      <h2>Welcome {userData.name}!</h2>
     </>
   );
 }

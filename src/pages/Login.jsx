@@ -9,8 +9,6 @@ import {
 import { loginUser } from "../api";
 import { publishEvent } from "../utils/eventListeners";
 
-let fetchedUserData;
-
 export function loader({ request }) {
   const url = new URL(request.url);
   const message = url.searchParams.get("message");
@@ -27,21 +25,29 @@ export async function action({ request }) {
   // console.log("pathname: ", pathname);
 
   try {
-    fetchedUserData = await loginUser({ email, password });
-    console.log(fetchedUserData);
+    const userData = await loginUser({ email, password });
+    console.log("userData: ", userData);
     const key = "loggedin";
     const newValue = JSON.stringify(true);
+    const key2 = "userData";
+    const newValue2 = JSON.stringify(userData);
 
     localStorage.setItem(key, newValue);
     publishEvent("login", { key, newValue });
+    localStorage.setItem(key2, newValue2);
+    publishEvent("login", { key2, newValue2 });
 
     return redirect(pathname);
   } catch (err) {
     const key = "loggedin";
     const newValue = JSON.stringify(false);
+    const key2 = "userData";
+    const newValue2 = JSON.stringify(null);
 
     localStorage.setItem(key, newValue);
     publishEvent("login", { key, newValue });
+    localStorage.setItem(key2, newValue2);
+    publishEvent("login", { key2, newValue2 });
 
     return err.message;
   }
