@@ -52,7 +52,7 @@ button {
 
 .btn {
   width: 100%;
-  border-radius: 10rem;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +75,7 @@ button {
   width: 100%;
   height: 100%;
   background-color: #ff8906;
-  border-radius: 10rem;
+  border-radius: 5px;
   z-index: -2;
 }
 .btn--orange:before {
@@ -85,8 +85,8 @@ button {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #f25f4c;
-  border-radius: 10rem;
+  background-color: #d26e00;
+  border-radius: 5px;
   transition: all 0.2s;
   z-index: -1;
 }
@@ -163,6 +163,7 @@ p {
 .home .heading-primary {
   font-size: 2.25rem;
   font-weight: 800;
+  line-height: 1.2;
 }
 .home .paragraph {
   color: #fffffe;
@@ -361,17 +362,16 @@ p {
 }
 .home__bg-img {
   object-fit: cover;
-  object-position: top;
   width: 100vw;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  filter: brightness(0.6);
+  filter: brightness(0.5);
   z-index: -1;
 }
 .home .paragraph {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */
