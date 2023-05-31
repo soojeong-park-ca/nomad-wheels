@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 
+import homeBgImg from "../assets/images/home-bg.png";
+import homeBgImgBig from "../assets/images/home-bg-big.png";
+
 export default function Home() {
   return (
     <section id="home" className="home">
+      <img
+        className="home__bg-img"
+        src={homeBgImg}
+        alt="A mountain view from a van window"
+      />
       <h1 className="heading-primary h1-margin">
         You got the travel plans, we got the travel vans.
       </h1>

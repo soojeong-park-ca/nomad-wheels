@@ -2,15 +2,33 @@
 @use "../abstracts/mixins" as m;
 
 .home {
-  background-image: linear-gradient(
-      130deg,
-      rgba(v.$color-black, 0.65),
-      transparent
-    ),
-    url("https://source.unsplash.com/RPcIkOzN0iQ");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+
+  // background-image: linear-gradient(
+  //     130deg,
+  //     rgba(v.$color-black, 0.65),
+  //     transparent
+  //   ),
+  //   url("https://source.unsplash.com/RPcIkOzN0iQ");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+
+  &__bg-img {
+    object-fit: cover;
+    object-position: top;
+
+    width: 100vw;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    filter: brightness(0.6);
+
+    z-index: -1;
+  }
 
   .paragraph {
     margin-bottom: 2rem;

@@ -1,41 +1,35 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+
+import AppContext from "../store/app-context";
+
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { publishCustomEvent } from "../utils/eventListeners";
+
 import LoginIcon from "./LoginIcon";
 import LogoutIcon from "./LogoutIcon";
 
 export default function Header() {
-  const [mobile, setMobile] = useState(window.innerWidth <= 768);
-  const [navOpen, setNavOpen] = useState(false);
+  const appCtx = useContext(AppContext);
 
   const [isLoggedIn] = useLocalStorage("loggedin", null);
   console.log("Header: ", isLoggedIn);
 
-  // Open / Close mobile nav state
-  function navToggleHandler() {
-    setNavOpen(prevState => !prevState);
-  }
-
   // Close nav with ESC key
-  const handleEscPress = e => {
-    if (navOpen && e.key === "Escape") setNavOpen(false);
-  };
-  window.addEventListener("keydown", handleEscPress);
+  window.addEventListener("keydown", e => {
+    if (appCtx.navOpen && e.key === "Escape") appCtx.onEscPress();
+  });
 
   // Close nav when nav-overlay clicked
   const handleOverlayClick = e => {
     e.target.classList.contains("overlay") &&
       !e.target.classList.contains("mobile-nav") &&
-      setNavOpen(false);
+      appCtx.onOverlayClick();
   };
 
   // Mobile nav or Desktop nav depending on window size
   useEffect(() => {
-    function handleWindowResize() {
-      setMobile(window.innerWidth <= 768);
-    }
-    window.addEventListener("resize", handleWindowResize);
+    window.addEventListener("resize", () => appCtx.onWindowResize());
   }, [window.innerWidth]);
 
   // Fake logout
@@ -60,7 +54,7 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="."
-        onClick={() => setNavOpen(false)}
+        onClick={() => appCtx.onCloseMobileNav()}
       >
         <div>Home</div>
       </NavLink>
@@ -71,7 +65,7 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="about"
-        onClick={() => setNavOpen(false)}
+        onClick={() => appCtx.onCloseMobileNav()}
       >
         <div>About</div>
       </NavLink>
@@ -82,7 +76,7 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="vans"
-        onClick={() => setNavOpen(false)}
+        onClick={() => appCtx.onCloseMobileNav()}
       >
         <div>Vans</div>
       </NavLink>
@@ -93,7 +87,7 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="host"
-        onClick={() => setNavOpen(false)}
+        onClick={() => appCtx.onCloseMobileNav()}
       >
         <div>Host</div>
       </NavLink>
@@ -102,8 +96,11 @@ export default function Header() {
 
   const displayMobileNav = (
     <>
-      <button className="mobile-nav-btn" onClick={navToggleHandler}>
-        {!navOpen ? (
+      <button
+        className="mobile-nav-btn"
+        onClick={() => appCtx.onMobileMenuClick()}
+      >
+        {!appCtx.navOpen ? (
           <i className="fa-solid fa-bars menu-icon"></i>
         ) : (
           <i className="fa-solid fa-xmark menu-icon"></i>
@@ -111,7 +108,7 @@ export default function Header() {
       </button>
       <nav
         className={`mobile-nav ${
-          navOpen ? "mobile-nav--open" : "mobile-nav--closed"
+          appCtx.navOpen ? "mobile-nav--open" : "mobile-nav--closed"
         }`}
       >
         {navigationElements}
@@ -123,7 +120,7 @@ export default function Header() {
                 : "mobile-nav-link"
             }
             to="login"
-            onClick={() => setNavOpen(false)}
+            onClick={() => appCtx.onCloseMobileNav()}
           >
             <div>Sign in</div>
           </NavLink>
@@ -132,7 +129,7 @@ export default function Header() {
             className="mobile-nav-link"
             to="login"
             onClick={() => {
-              setNavOpen(false);
+              appCtx.onCloseMobileNav();
               logoutHandler();
             }}
           >
@@ -168,32 +165,19 @@ export default function Header() {
         <Link
           className="btn-logo btn-home"
           to="/"
-          onClick={() => setNavOpen(false)}
+          onClick={() => appCtx.onCloseMobileNav()}
         >
-          <i className="fa-solid fa-van-shuttle logo-icon"></i> NomadWheels
+          <i className="fa-solid fa-van-shuttle logo-icon"></i> Nomad Wheels
         </Link>
-        {mobile ? displayMobileNav : displayDesktopNav}
+        {appCtx.mobile ? displayMobileNav : displayDesktopNav}
       </header>
 
-      {mobile && (
+      {appCtx.mobile && (
         <div
-          className={`overlay ${!navOpen ? "hidden" : ""}`}
+          className={`overlay ${!appCtx.navOpen ? "hidden" : ""}`}
           onClick={handleOverlayClick}
         ></div>
       )}
     </>
   );
 }
-
-/*
-
-<div className={`navbar ${props.className || ""}`}>{props.children}</div>
-
-        <NavLink className="btn-login" to="/login">
-          <LoginIcon className="login-icon" />
-        </NavLink>
-
-        <button className="btn-logout">
-          <LogoutIcon className="logout-icon" />
-        </button>
-*/
