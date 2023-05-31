@@ -18,7 +18,6 @@ import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
 
 import Error from "./components/Error";
-
 // import { requireAuth } from "./utils/requireAuth";
 
 const router = createBrowserRouter(

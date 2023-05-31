@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-
+import { publishCustomEvent } from "../utils/eventListeners";
 // import LoginIcon from "./LoginIcon";
 // import LogoutIcon from "./LogoutIcon";
 
@@ -42,9 +42,13 @@ export default function Header() {
   const logoutHandler = () => {
     const key = "loggedin";
     const newValue = JSON.stringify(false);
+    const key2 = "userData";
+    const newValue2 = JSON.stringify(null);
 
     localStorage.setItem(key, newValue);
-    publishEvent("login", { key, newValue });
+    publishCustomEvent("logout", { key, newValue });
+    localStorage.setItem(key2, newValue2);
+    publishCustomEvent("logout", { key2, newValue2 });
   };
 
   const navigationElements = (

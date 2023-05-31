@@ -9,7 +9,7 @@ export const unsubscribeToEvent = (name, listener) => {
 };
 
 // Boilerplate for creating a custom event
-export const publishEvent = (name, data) => {
+export const publishCustomEvent = (name, data) => {
   const event = new CustomEvent(name, { detail: data });
   document.dispatchEvent(event);
 };

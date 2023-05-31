@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { loginUser } from "../api";
-import { publishEvent } from "../utils/eventListeners";
+import { publishCustomEvent } from "../utils/eventListeners";
 
 export function loader({ request }) {
   const url = new URL(request.url);
@@ -33,21 +33,23 @@ export async function action({ request }) {
     const newValue2 = JSON.stringify(userData);
 
     localStorage.setItem(key, newValue);
-    publishEvent("login", { key, newValue });
+    publishCustomEvent("login", { key, newValue });
     localStorage.setItem(key2, newValue2);
     publishEvent("login", { key2, newValue2 });
+
+    // localStorage.setItem("userData", JSON.parse(userData));
 
     return redirect(pathname);
   } catch (err) {
     const key = "loggedin";
     const newValue = JSON.stringify(false);
-    const key2 = "userData";
-    const newValue2 = JSON.stringify(null);
+    // const key2 = "userData";
+    // const newValue2 = JSON.stringify(null);
 
     localStorage.setItem(key, newValue);
-    publishEvent("login", { key, newValue });
-    localStorage.setItem(key2, newValue2);
-    publishEvent("login", { key2, newValue2 });
+    publishCustomEvent("logout", { key, newValue });
+    // localStorage.setItem(key2, newValue2);
+    // publishEvent("logout", { key2, newValue2 });
 
     return err.message;
   }

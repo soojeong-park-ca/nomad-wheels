@@ -43,9 +43,11 @@ export function useLocalStorage(key, defaultValue) {
     };
 
     subscribeToEvent("login", handleEvent);
+    subscribeToEvent("logout", handleEvent);
     window.addEventListener("storage", handleEvent);
     return () => {
       unsubscribeToEvent("login", handleEvent);
+      unsubscribeToEvent("logout", handleEvent);
       window.removeEventListener("storage", handleEvent);
     };
   }, [prevKeyRef]);
