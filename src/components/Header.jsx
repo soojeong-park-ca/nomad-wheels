@@ -58,7 +58,7 @@ export default function Header() {
       >
         <div>Home</div>
       </NavLink>
-      <NavLink
+      {/* <NavLink
         className={({ isActive }) =>
           isActive
             ? "mobile-nav-link mobile-nav-link--active"
@@ -68,7 +68,7 @@ export default function Header() {
         onClick={() => appCtx.onCloseMobileNav()}
       >
         <div>About</div>
-      </NavLink>
+      </NavLink> */}
       <NavLink
         className={({ isActive }) =>
           isActive

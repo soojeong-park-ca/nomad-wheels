@@ -35,11 +35,6 @@ body {
   max-width: 80rem;
 }
 
-section {
-  flex: 1;
-  padding-inline: 1.625rem;
-}
-
 a {
   text-decoration: none;
   border: none;
@@ -162,12 +157,12 @@ p {
 
 .home .heading-primary {
   font-size: 2.25rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.2;
 }
 .home .paragraph {
   color: #fffffe;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .copyright {
@@ -183,11 +178,57 @@ p {
 }
 
 .h1-margin {
-  margin-block: 4rem 1.5rem;
+  margin-block: 4rem 1.25rem;
 }
 
 .margin-bottom-big {
   margin-bottom: 4rem;
+}
+
+.app-padding-inline-default {
+  padding-inline: 1.625rem;
+}
+
+.about__img {
+  width: 100%;
+  height: 30rem;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+.about__info {
+  text-align: left;
+  padding: 0 1.7rem 3.3rem 1.7rem;
+}
+.about__info .headingPrimary {
+  line-height: 1.2;
+  margin-bottom: 1.96rem;
+}
+.about__info .headingSecondary {
+  line-height: 1.25;
+  margin-bottom: 1.56rem;
+}
+.about__info .paragraph {
+  line-height: 1.4;
+  margin-bottom: 3.4rem;
+}
+
+.cta {
+  background-color: var(--color-primary-medium-2);
+  border-radius: 5px;
+  padding: 2rem 2.3rem;
+}
+
+.cta a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  border: none;
+}
+
+.btn--black {
+  width: 11rem;
+  background-color: var(--color-text-default);
 }
 
 .loading-container {
@@ -328,6 +369,25 @@ p {
   padding: 0 0.5rem;
 }
 
+.hero {
+  width: 100%;
+  height: calc(100vh - 6.25rem);
+  position: relative;
+}
+.hero__bg-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.8);
+  z-index: -1;
+}
+.hero .paragraph {
+  margin-bottom: 1.5rem;
+}
+
 .siteWrapper {
   min-height: 100vh;
   display: flex;
@@ -335,9 +395,7 @@ p {
 }
 
 .main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   background-color: var(--color-primary-light);
   padding-top: 6.25rem;
 }
@@ -358,20 +416,12 @@ p {
 }
 
 .home {
-  position: relative;
-}
-.home__bg-img {
-  object-fit: cover;
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  filter: brightness(0.5);
-  z-index: -1;
-}
-.home .paragraph {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8rem;
 }
 
 /*# sourceMappingURL=main.css.map */

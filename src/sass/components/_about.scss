@@ -1,0 +1,50 @@
+.about {
+  // background-color: var(--color-primary-light);
+
+  &__img {
+    width: 100%;
+    height: 30rem;
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  &__info {
+    text-align: left;
+    padding: 0 1.7rem 3.3rem 1.7rem;
+
+    .headingPrimary {
+      line-height: 1.2;
+      margin-bottom: 1.96rem;
+    }
+
+    .headingSecondary {
+      line-height: 1.25;
+      margin-bottom: 1.56rem;
+    }
+
+    .paragraph {
+      line-height: 1.4;
+      margin-bottom: 3.4rem;
+    }
+  }
+}
+
+.cta {
+  background-color: var(--color-primary-medium-2);
+  border-radius: 5px;
+
+  padding: 2rem 2.3rem;
+}
+
+.cta a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  border: none;
+}
+
+.btn--black {
+  width: 11rem;
+  background-color: var(--color-text-default);
+}

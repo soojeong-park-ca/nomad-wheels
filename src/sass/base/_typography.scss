@@ -91,13 +91,13 @@ p {
 .home {
   .heading-primary {
     font-size: v.$font-s-xl;
-    font-weight: $font-w-2xl;
+    font-weight: $font-w-xl;
     line-height: 1.2;
   }
 
   .paragraph {
     color: v.$color-white;
-    font-weight: v.$font-w-s;
+    font-weight: v.$font-w-xs;
   }
 }
 
