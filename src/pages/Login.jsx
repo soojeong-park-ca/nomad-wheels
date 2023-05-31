@@ -35,7 +35,7 @@ export async function action({ request }) {
     localStorage.setItem(key, newValue);
     publishCustomEvent("login", { key, newValue });
     localStorage.setItem(key2, newValue2);
-    publishEvent("login", { key2, newValue2 });
+    publishCustomEvent("login", { key2, newValue2 });
 
     // localStorage.setItem("userData", JSON.parse(userData));
 
