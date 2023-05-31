@@ -1,0 +1,111 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+/////////////////////////////////////////
+/// BASE
+body {
+  color: v.$color-gray-light;
+
+  font-family: "Inter", sans-serif;
+  font-size: v.$font-s-xs;
+  font-weight: v.$font-w-m;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p {
+  word-break: break-word;
+}
+
+h1,
+h2,
+h3 {
+  color: v.$color-white;
+}
+
+p {
+  color: v.$color-gray-light;
+}
+
+// buttons
+.btn {
+  color: v.$color-white;
+  font-size: v.$font-s-xs;
+  font-weight: v.$font-w-xl;
+  line-height: 2;
+  text-align: center;
+}
+
+/////////////////////////////////////////
+/// HEADER
+.btn-logo {
+  color: v.$color-white;
+  font-size: v.$font-s-s;
+}
+
+.logo-icon {
+  color: v.$color-primary;
+  font-size: v.$font-s-m;
+}
+
+// mobile nav
+
+.menu-icon {
+  color: v.$color-white;
+  font-size: v.$font-s-m;
+}
+
+.mobile-nav-link {
+  div {
+    color: v.$color-white;
+    font-size: v.$font-s-m;
+  }
+
+  &:hover,
+  &--active {
+    div {
+      color: v.$color-black;
+    }
+  }
+}
+
+// desktop nav
+.desktop-nav {
+  .mobile-nav-link {
+    div {
+      font-size: v.$font-s-s;
+    }
+  }
+}
+
+.login-icon,
+.logout-icon {
+  color: v.$color-white;
+  font-size: v.$font-s-m;
+}
+
+/////////////////////////////////////////
+/// HOME PAGE
+.home {
+  .heading-primary {
+    font-size: v.$font-s-xl;
+    font-weight: $font-w-2xl;
+  }
+
+  .paragraph {
+    color: v.$color-white;
+    font-weight: v.$font-w-s;
+  }
+}
+
+/////////////////////////////////////////
+/// FOOTER
+.copyright {
+  color: inherit;
+  font-size: v.$font-s-2xs;
+  font-weight: inherit;
+  line-height: 1.64;
+  text-transform: uppercase;
+}

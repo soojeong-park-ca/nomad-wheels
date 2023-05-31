@@ -26,11 +26,6 @@ body {
   max-width: 100%;
   min-height: 100%;
   background-color: #0f0e17;
-  color: #a7a9be;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
   scroll-behavior: smooth;
   overscroll-behavior: none;
 }
@@ -40,14 +35,9 @@ body {
   max-width: 80rem;
 }
 
-h1,
-h2,
-h3 {
-  color: #fffffe;
-}
-
-p {
-  color: #a7a9be;
+section {
+  flex: 1;
+  padding-inline: 1.625rem;
 }
 
 a {
@@ -60,12 +50,143 @@ button {
   border: none;
 }
 
-section {
-  padding-inline: 1.625rem;
+.btn {
+  width: 100%;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+}
+
+.btn--orange {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+.btn--orange:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff8906;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.btn--orange:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #f25f4c;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  z-index: -1;
+}
+.btn--orange:hover:before, .btn--orange:active:before {
+  width: 100%;
+}
+
+body {
+  color: #a7a9be;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p {
+  word-break: break-word;
+}
+
+h1,
+h2,
+h3 {
+  color: #fffffe;
+}
+
+p {
+  color: #a7a9be;
+}
+
+.btn {
+  color: #fffffe;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+}
+
+.btn-logo {
+  color: #fffffe;
+  font-size: 1.25rem;
+}
+
+.logo-icon {
+  color: #ff8906;
+  font-size: 1.5rem;
+}
+
+.menu-icon {
+  color: #fffffe;
+  font-size: 1.5rem;
+}
+
+.mobile-nav-link div {
+  color: #fffffe;
+  font-size: 1.5rem;
+}
+.mobile-nav-link:hover div, .mobile-nav-link--active div {
+  color: #0f0e17;
+}
+
+.desktop-nav .mobile-nav-link div {
+  font-size: 1.25rem;
+}
+
+.login-icon,
+.logout-icon {
+  color: #fffffe;
+  font-size: 1.5rem;
+}
+
+.home .heading-primary {
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+.home .paragraph {
+  color: #fffffe;
+  font-weight: 400;
+}
+
+.copyright {
+  color: inherit;
+  font-size: 0.875rem;
+  font-weight: inherit;
+  line-height: 1.64;
+  text-transform: uppercase;
 }
 
 .hidden {
   display: none;
+}
+
+.h1-margin {
+  margin-block: 4rem 1.5rem;
+}
+
+.margin-bottom-big {
+  margin-bottom: 4rem;
 }
 
 .loading-container {
@@ -100,14 +221,6 @@ section {
   padding-block: 1.6rem;
 }
 
-.copyright {
-  color: inherit;
-  font-size: 0.875rem;
-  font-weight: inherit;
-  line-height: 1.64;
-  text-transform: uppercase;
-}
-
 .header {
   width: 100%;
   height: 6.25rem;
@@ -124,13 +237,9 @@ section {
 .btn-logo {
   display: flex;
   align-items: center;
-  color: #fffffe;
-  font-size: 1.25rem;
 }
 
 .logo-icon {
-  color: #ff8906;
-  font-size: 1.5rem;
   margin-right: 5px;
 }
 
@@ -138,11 +247,6 @@ section {
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.menu-icon {
-  color: #fffffe;
-  font-size: 1.5rem;
 }
 
 .overlay {
@@ -189,8 +293,6 @@ section {
 .mobile-nav-link div {
   width: fit-content;
   position: relative;
-  color: #fffffe;
-  font-size: 1.5rem;
   padding: 0rem 2rem;
   transition: all 0.15s ease;
 }
@@ -204,13 +306,25 @@ section {
   content: "";
   width: 100%;
 }
-.mobile-nav-link:hover div, .mobile-nav-link--active div {
-  color: #0f0e17;
-}
 .mobile-nav-link:hover div::after, .mobile-nav-link--active div::after {
   clip-path: polygon(20% 0%, 100% 0, 80% 100%, 0% 100%);
   background-color: #ff8906;
   z-index: -1;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.desktop-nav .mobile-nav-link div {
+  padding: 0 1rem;
+}
+
+.login-icon,
+.logout-icon {
+  padding: 0 0.5rem;
 }
 
 .siteWrapper {
@@ -240,6 +354,16 @@ section {
   text-decoration: underline;
   text-underline-offset: 3px;
   border: none;
+}
+
+.home {
+  background-image: linear-gradient(130deg, rgba(15, 14, 23, 0.65), transparent), url("https://source.unsplash.com/RPcIkOzN0iQ");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home .paragraph {
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

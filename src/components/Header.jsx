@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { publishCustomEvent } from "../utils/eventListeners";
-// import LoginIcon from "./LoginIcon";
-// import LogoutIcon from "./LogoutIcon";
+import LoginIcon from "./LoginIcon";
+import LogoutIcon from "./LogoutIcon";
 
 export default function Header() {
   const [mobile, setMobile] = useState(window.innerWidth <= 768);
@@ -97,31 +97,6 @@ export default function Header() {
       >
         <div>Host</div>
       </NavLink>
-
-      {!isLoggedIn ? (
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "mobile-nav-link mobile-nav-link--active"
-              : "mobile-nav-link"
-          }
-          to="login"
-          onClick={() => setNavOpen(false)}
-        >
-          <div>Sign in</div>
-        </NavLink>
-      ) : (
-        <Link
-          className="mobile-nav-link"
-          to="login"
-          onClick={() => {
-            setNavOpen(false);
-            logoutHandler();
-          }}
-        >
-          <div>Sign out</div>
-        </Link>
-      )}
     </>
   );
 
@@ -140,19 +115,62 @@ export default function Header() {
         }`}
       >
         {navigationElements}
+        {!isLoggedIn ? (
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-nav-link mobile-nav-link--active"
+                : "mobile-nav-link"
+            }
+            to="login"
+            onClick={() => setNavOpen(false)}
+          >
+            <div>Sign in</div>
+          </NavLink>
+        ) : (
+          <Link
+            className="mobile-nav-link"
+            to="login"
+            onClick={() => {
+              setNavOpen(false);
+              logoutHandler();
+            }}
+          >
+            <div>Sign out</div>
+          </Link>
+        )}
       </nav>
     </>
   );
 
   const displayDesktopNav = (
-    <nav className="desktop-nav">{navigationElements}</nav>
+    <nav className="desktop-nav">
+      {navigationElements}
+      {!isLoggedIn ? (
+        <Link to="login">
+          <div>
+            <LoginIcon className="login-icon" />
+          </div>
+        </Link>
+      ) : (
+        <Link to="login" onClick={() => logoutHandler()}>
+          <div>
+            <LogoutIcon className="logout-icon" />
+          </div>
+        </Link>
+      )}
+    </nav>
   );
 
   return (
     <>
       <header className="header">
-        <Link className="btn-logo btn-home" to="/">
-          <i className="fa-solid fa-van-shuttle logo-icon"></i> VanVenture
+        <Link
+          className="btn-logo btn-home"
+          to="/"
+          onClick={() => setNavOpen(false)}
+        >
+          <i className="fa-solid fa-van-shuttle logo-icon"></i> NomadWheels
         </Link>
         {mobile ? displayMobileNav : displayDesktopNav}
       </header>
