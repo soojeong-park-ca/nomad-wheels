@@ -37,19 +37,6 @@
     }
   }
 
-  @include m.respondMin(v.$tablet) {
-    // .heading-primary {
-    //   padding-right: 8rem;
-    // }
-
-    // .paragraph {
-    //   padding-right: 5rem;
-    // }
-    // &__title {
-    //   width: 30rem;
-    // }
-  }
-
   @include m.respondMin(v.$laptop) {
     &__bg-img {
       object-position: 50% 68%;
@@ -58,6 +45,12 @@
 
     .btn {
       width: 25rem;
+    }
+  }
+
+  @include m.respondMin(v.$laptop-m) {
+    &__title {
+      margin-top: 8rem;
     }
   }
 }

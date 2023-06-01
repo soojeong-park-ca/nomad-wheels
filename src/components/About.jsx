@@ -21,10 +21,10 @@ export default function About() {
               that you can bid farewell to squeezing and welcome a world of
               freedom and relaxation.
             </p>
-            <div className="about__info-img-container">
+            <div className="about__info-img-container about__info-img-container-1">
               <img src={insideSedanImg} alt="Inside of a sedan" />
             </div>
-            <div className="about__info-img-container">
+            <div className="about__info-img-container about__info-img-container-2">
               <img
                 src={spaciousVanImg}
                 alt="Inside of a fully furnished spacious van"
