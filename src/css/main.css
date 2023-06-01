@@ -401,10 +401,32 @@ p {
   }
 }
 .features__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 3rem;
+}
+@media screen and (min-width: 80em) {
+  .features__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    row-gap: none;
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 5rem auto;
+  }
+  .feature__title {
+    max-width: 18.75rem;
+  }
+  .feature__detail {
+    margin-top: 1rem;
+  }
 }
 
 .footer {

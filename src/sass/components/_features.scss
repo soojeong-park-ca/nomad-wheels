@@ -1,13 +1,36 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .features {
   &__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 3rem;
+  }
+
+  @include m.respondMin(v.$laptop-l) {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      row-gap: none;
+      column-gap: 2rem;
+    }
   }
 }
 
 .feature {
+  @include m.respondMin(v.$laptop-l) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 5rem auto;
+
+    &__title {
+      max-width: 18.75rem;
+    }
+
+    &__detail {
+      margin-top: 1rem;
+    }
+  }
 }
