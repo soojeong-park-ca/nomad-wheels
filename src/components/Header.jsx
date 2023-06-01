@@ -13,7 +13,7 @@ export default function Header() {
   const appCtx = useContext(AppContext);
 
   const [isLoggedIn] = useLocalStorage("loggedin", null);
-  console.log("Header: ", isLoggedIn);
+  // console.log("Header: ", isLoggedIn);
 
   // Close nav with ESC key
   window.addEventListener("keydown", e => {

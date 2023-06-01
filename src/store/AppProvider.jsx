@@ -7,6 +7,10 @@ const CLICK_MOBILE_MENU = "CLICK_MOBILE_MENU";
 const CLOSE_MOBILE_NAV = "CLOSE_MOBILE_NAV";
 const PRESS_ESC_KEY = "PRESS_ESC_KEY ";
 const CLICK_NAV_OVERLAY = "CLICK_NAV_OVERLAY";
+const CLICK_LEFT_TESTIMONIAL = "CLICK_LEFT_TESTIMONIAL";
+const CLICK_RIGHT_TESTIMONIAL = "CLICK_RIGHT_TESTIMONIAL";
+const RESET_TESTIMONIAL_INDEX_TO_0 = "RESET_TESTIMONIAL_INDEX_TO_0";
+const RESET_TESTIMONIAL_INDEX_TO_MAX = "RESET_TESTIMONIAL_INDEX_TO_MAX";
 
 const initialState = {
   mobile: window.innerWidth <= 768,
@@ -16,6 +20,12 @@ const initialState = {
   onCloseMobileNav: () => {},
   onEscPress: () => {},
   onOverlayClick: () => {},
+
+  currentTestimonialIndex: 0,
+  onLeftTestimonialClick: () => {},
+  onRightTestimonialClick: () => {},
+  onResetTestimonialTo0: () => {},
+  onResetTestimonialToMax: () => {},
 };
 
 const reducer = (state, action) => {
@@ -30,6 +40,28 @@ const reducer = (state, action) => {
       return { ...state, navOpen: false };
     case CLICK_NAV_OVERLAY:
       return { ...state, navOpen: false };
+    case CLICK_LEFT_TESTIMONIAL:
+      return {
+        ...state,
+        currentTestimonialIndex: state.currentTestimonialIndex - 1,
+      };
+    case CLICK_RIGHT_TESTIMONIAL:
+      return {
+        ...state,
+        currentTestimonialIndex: state.currentTestimonialIndex + 1,
+      };
+    case RESET_TESTIMONIAL_INDEX_TO_0:
+      return {
+        ...state,
+        currentTestimonialIndex: 0,
+      };
+    case RESET_TESTIMONIAL_INDEX_TO_MAX:
+      return {
+        ...state,
+        currentTestimonialIndex: action.arrLength - 1,
+      };
+    default:
+      return state;
   }
 };
 
@@ -58,6 +90,22 @@ export default function AppProvider({ children }) {
     dispatch({ type: CLICK_NAV_OVERLAY });
   }
 
+  function handleLeftTestimonialClick() {
+    dispatch({ type: CLICK_LEFT_TESTIMONIAL });
+  }
+
+  function handleRightTestimonialClick() {
+    dispatch({ type: CLICK_RIGHT_TESTIMONIAL });
+  }
+
+  function handleTestimonialTo0() {
+    dispatch({ type: RESET_TESTIMONIAL_INDEX_TO_0 });
+  }
+
+  function handleTestimonialToMax(arr) {
+    dispatch({ type: RESET_TESTIMONIAL_INDEX_TO_MAX, arrLength: arr.length });
+  }
+
   const appContext = {
     mobile: state.mobile,
     navOpen: state.navOpen,
@@ -66,6 +114,12 @@ export default function AppProvider({ children }) {
     onCloseMobileNav: handleCloseMobileNav,
     onEscPress: handleEscPress,
     onOverlayClick: handleOverlayClick,
+
+    currentTestimonialIndex: state.currentTestimonialIndex,
+    onLeftTestimonialClick: handleLeftTestimonialClick,
+    onRightTestimonialClick: handleRightTestimonialClick,
+    onResetTestimonialTo0: handleTestimonialTo0,
+    onResetTestimonialToMax: handleTestimonialToMax,
   };
 
   return (

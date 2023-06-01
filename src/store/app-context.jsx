@@ -8,6 +8,10 @@ const AppContext = createContext({
   onCloseMobileNav: () => {},
   onEscPress: () => {},
   onOverlayClick: () => {},
+
+  currentTestimonialIndex: 0,
+  onLeftTestimonialClick: () => {},
+  onRightTestimonialClick: () => {},
 });
 
 export default AppContext;

@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.testimonial {
+  &__content {
+    position: relative;
+  }
+
+  &__item {
+    padding: 2.5rem 1.25rem;
+  }
+
+  &__review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    p {
+      padding: 1rem;
+    }
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: -1;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

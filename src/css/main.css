@@ -599,6 +599,40 @@ p {
   }
 }
 
+.testimonial__content {
+  position: relative;
+}
+.testimonial__item {
+  padding: 2.5rem 1.25rem;
+}
+.testimonial__review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.testimonial__review p {
+  padding: 1rem;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: -1;
+}
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .siteWrapper {
   min-height: 100vh;
   display: flex;
