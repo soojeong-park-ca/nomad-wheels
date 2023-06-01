@@ -51,6 +51,11 @@ p {
   line-height: 1.6;
 }
 
+.heading-quarternary {
+  font-size: v.$font-s-m;
+  font-weight: v.$font-w-l;
+}
+
 // buttons
 .btn {
   color: v.$color-white;
@@ -117,10 +122,12 @@ p {
   }
 }
 
+// hero
 .hero {
   color: v.$color-white;
 }
 
+// about
 .about {
   color: v.$color-black;
 
@@ -139,6 +146,11 @@ p {
   .heading-tertiary {
     color: v.$color-white;
   }
+}
+
+// features
+.feature-icon {
+  font-size: v.$font-s-2xl;
 }
 
 /////////////////////////////////////////

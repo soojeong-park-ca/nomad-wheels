@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as v;
+
+.features {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.feature {
+}

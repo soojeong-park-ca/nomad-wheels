@@ -126,6 +126,11 @@ p {
   line-height: 1.6;
 }
 
+.heading-quarternary {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .btn {
   color: #fffffe;
   font-size: 1rem;
@@ -191,6 +196,10 @@ p {
   color: #fffffe;
 }
 
+.feature-icon {
+  font-size: 3rem;
+}
+
 .footer {
   color: #a7a9be;
   text-align: center;
@@ -233,10 +242,6 @@ p {
 }
 
 .margin-bottom-2xl {
-  margin-bottom: 6rem;
-}
-
-.margin-bottom-3xl {
   margin-bottom: 8rem;
 }
 
@@ -307,6 +312,13 @@ p {
     transform: rotate(360deg);
   }
 }
+.features__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+
 .footer {
   width: 100%;
   background-color: #0f0e17;

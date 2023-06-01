@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import aboutImg from "../assets/images/van-night.png";
 
 export default function About() {
   return (
@@ -9,6 +8,7 @@ export default function About() {
           <h2 className="heading-secondary margin-bottom-m">
             Don’t squeeze in a sedan when you could relax in a van.
           </h2>
+          <hr className="margin-bottom-l" />
           <div className="about__info-text">
             <p className="paragraph">
               Leave the confines of cramped sedans behind and embrace the
@@ -40,14 +40,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      {/* <div className="about__img-container">
-        <img
-          className="about__img"
-          src={aboutImg}
-          alt="People sitting at the opened back of a lit-up van at night"
-        />
-      </div> */}
     </section>
   );
 }
