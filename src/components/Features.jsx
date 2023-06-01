@@ -8,7 +8,7 @@ export default function Features() {
           <h2 className="heading-secondary margin-bottom-m">
             Explore the exceptional features of Nomad Wheels
           </h2>
-          <hr className="margin-bottom-l" />
+          <hr className="margin-bottom-xl" />
           <div className="features__list">
             <div className="feature">
               <div className="feature__icon margin-bottom-s">

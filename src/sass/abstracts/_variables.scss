@@ -2,6 +2,7 @@
 /// FONT SIZE + SPACING
 $font-s-2xs: 0.875rem;
 $font-s-xs: 1rem;
+$font-s-xs-2: 1.1rem;
 $font-s-s: 1.25rem;
 $font-s-m: 1.5rem;
 $font-s-l: 2rem;
@@ -30,4 +31,7 @@ $color-tertiary: #e53170;
 // MEDIA QUERIES
 $mobile-s: 374px;
 $tablet: 656px;
-$laptop: 767px;
+$laptop: 769px;
+$laptop-2: 848px;
+$laptop-m: 1025px;
+$laptop-l: 1280px;

@@ -19,6 +19,12 @@ p {
   word-break: break-word;
 }
 
+p {
+  @include m.respondMin(v.$laptop-2) {
+    font-size: v.$font-s-xs-2;
+  }
+}
+
 // h1,
 // h2,
 // h3 {
@@ -49,6 +55,10 @@ p {
   font-size: v.$font-s-m;
   font-weight: v.$font-w-xl;
   line-height: 1.6;
+
+  @include m.respondMin(v.$laptop) {
+    font-size: v.$font-s-l;
+  }
 }
 
 .heading-quarternary {
@@ -117,7 +127,6 @@ p {
 /// HOME PAGE
 .home {
   .paragraph {
-    // color: v.$color-white;
     font-weight: v.$font-w-xs;
   }
 }
