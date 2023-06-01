@@ -121,6 +121,11 @@ p {
     font-size: 2rem;
   }
 }
+@media screen and (min-width: 90em) {
+  .heading-primary {
+    font-size: 3rem;
+  }
+}
 
 .heading-secondary {
   font-size: 2rem;
@@ -586,6 +591,11 @@ p {
 @media screen and (min-width: 64em) {
   .hero__title {
     margin-top: 8rem;
+  }
+}
+@media screen and (min-width: 80em) {
+  .hero__title {
+    max-width: 40rem;
   }
 }
 

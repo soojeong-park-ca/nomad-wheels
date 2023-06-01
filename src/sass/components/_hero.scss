@@ -53,4 +53,10 @@
       margin-top: 8rem;
     }
   }
+
+  @include m.respondMin(v.$laptop-l) {
+    &__title {
+      max-width: 40rem;
+    }
+  }
 }

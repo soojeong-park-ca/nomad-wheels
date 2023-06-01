@@ -43,6 +43,10 @@ p {
   @include m.respondMax(v.$mobile-s) {
     font-size: v.$font-s-l;
   }
+
+  @include m.respondMin(v.$laptop-xl) {
+    font-size: v.$font-s-2xl;
+  }
 }
 
 .heading-secondary {
