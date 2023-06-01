@@ -3,39 +3,51 @@ import aboutImg from "../assets/images/van-night.png";
 
 export default function About() {
   return (
-    <section id="about" className="about">
-      <div className="about__info app-padding-inline-default">
-        <h1 className="heading-primary">
-          Don’t squeeze in a sedan when you could relax in a van.
-        </h1>
-        <p className="paragraph">
-          Our mission is to enliven your road trip with the perfect travel van
-          rental. Our vans are recertified before each trip to ensure your
-          travel plans can go off without a hitch. (Hitch costs extra 😉)
-          <br />
-          <br />
-          Our team is full of vanlife enthusiasts who know firsthand the magic
-          of touring the world on 4 wheels.
-        </p>
+    <section id="about" className="about margin-bottom-2xl">
+      <div className="about__info app-padding-inline-default margin-bottom-xl">
+        <div className="max-width center-hori">
+          <h2 className="heading-secondary margin-bottom-m">
+            Don’t squeeze in a sedan when you could relax in a van.
+          </h2>
+          <div className="about__info-text">
+            <p className="paragraph">
+              Leave the confines of cramped sedans behind and embrace the
+              liberating comfort of a spacious van. Nomad Wheels invites you to
+              experience unforgettable travel moments that go beyond the
+              ordinary.
+            </p>
+            <p className="paragraph">
+              Whether you're embarking on a road trip, planning a camping
+              adventure, or simply seeking a mobile sanctuary, our van rentals
+              offer the perfect blend of convenience, versatility, and style.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="cta">
-        <h2 className="heading-secondary">
-          Your destination is waiting.
-          <br />
-          Your van is ready.
-        </h2>
+      <div className="cta app-padding-inline-default">
+        <div className="max-width center-hori">
+          <div className="cta__content">
+            <h3 className="heading-tertiary margin-bottom-m">
+              Your destination is waiting.
+              <br />
+              Your van is ready.
+            </h3>
 
-        <Link to="/vans">
-          <div className="btn--black">Explore our vans</div>
-        </Link>
+            <Link to="/vans" className="btn btn--orange">
+              <div>Explore our vans</div>
+            </Link>
+          </div>
+        </div>
       </div>
 
-      <img
-        className="about__img"
-        src={aboutImg}
-        alt="People sitting at the opened back of a lit-up van at night"
-      />
+      {/* <div className="about__img-container">
+        <img
+          className="about__img"
+          src={aboutImg}
+          alt="People sitting at the opened back of a lit-up van at night"
+        />
+      </div> */}
     </section>
   );
 }

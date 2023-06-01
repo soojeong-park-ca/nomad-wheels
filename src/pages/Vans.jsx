@@ -1,3 +1,3 @@
 export default function Vans() {
-  return <>Vans Page</>;
+  return <div style={{ marginBottom: "100rem" }}>Vans Page</div>;
 }

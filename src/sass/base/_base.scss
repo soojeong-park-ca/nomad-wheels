@@ -32,7 +32,7 @@ body {
   max-width: 100%;
   min-height: 100%;
 
-  background-color: v.$color-black;
+  background-color: v.$color-white;
 
   scroll-behavior: smooth;
   overscroll-behavior: none;
@@ -40,16 +40,11 @@ body {
 
 #root {
   width: 100%;
-  max-width: 80rem; // 1280px
 }
-
-// section {
-//   // flex: 1;
-//   padding-inline: 1.625rem;
-// }
 
 // buttons
 a {
+  width: 100%;
   text-decoration: none;
   border: none;
 }
@@ -68,6 +63,10 @@ button {
   justify-content: center;
 
   padding: 0.625rem;
+
+  @include m.respondMin(v.$laptop) {
+    width: 10rem;
+  }
 }
 
 .btn--orange {

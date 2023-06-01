@@ -1,34 +1,34 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import AppContext from "../store/app-context";
 import homeBgImg from "../assets/images/home-bg.png";
 
 export default function Hero() {
-  const appCtx = useContext(AppContext);
-
   return (
-    <section id="hero" className="hero app-padding-inline-default">
+    <section
+      id="hero"
+      className="hero app-padding-inline-default margin-bottom-2xl"
+    >
       <img
         className="hero__bg-img"
-        style={
-          appCtx.mobile
-            ? { objectPosition: "bottom" }
-            : { objectPosition: "50% 68%" }
-        }
         src={homeBgImg}
         alt="A mountain view from a van window"
       />
-      <h1 className="heading-primary h1-margin">
-        You got the travel plans, we got the travel vans.
-      </h1>
-      <p className="paragraph">
-        Add adventure to your life with Nomad Wheel. Rent the perfect van to
-        make your perfect road trip.
-      </p>
-      {/* <Link to="/vans" className="btn btn--orange margin-bottom-big">
-        <div>Find your van</div>
-      </Link> */}
+
+      <div className="max-width center-hori">
+        <div className="hero__title">
+          <h1 className="heading-primary margin-bottom-s">
+            You got the travel plans, we got the travel vans.
+          </h1>
+          <p className="paragraph margin-bottom-s">
+            Step into a van that's tailor-made for your travel dreams and
+            embrace the true essence of exploration.
+          </p>
+        </div>
+
+        <Link to="/vans" className="btn btn--orange">
+          <div>Find your van</div>
+        </Link>
+      </div>
     </section>
   );
 }

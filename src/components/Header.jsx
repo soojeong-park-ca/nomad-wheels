@@ -161,15 +161,17 @@ export default function Header() {
 
   return (
     <>
-      <header className="header">
-        <Link
-          className="btn-logo btn-home"
-          to="/"
-          onClick={() => appCtx.onCloseMobileNav()}
-        >
-          <i className="fa-solid fa-van-shuttle logo-icon"></i> Nomad Wheels
-        </Link>
-        {appCtx.mobile ? displayMobileNav : displayDesktopNav}
+      <header className="header app-padding-inline-default">
+        <div className="navbar max-width center-hori">
+          <Link
+            className="btn-logo btn-home"
+            to="/"
+            onClick={() => appCtx.onCloseMobileNav()}
+          >
+            <i className="fa-solid fa-van-shuttle logo-icon"></i> Nomad Wheels
+          </Link>
+          {appCtx.mobile ? displayMobileNav : displayDesktopNav}
+        </div>
       </header>
 
       {appCtx.mobile && (

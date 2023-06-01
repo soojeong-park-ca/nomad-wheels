@@ -4,7 +4,7 @@
 /////////////////////////////////////////
 /// BASE
 body {
-  color: v.$color-gray-light;
+  // color: v.$color-gray-light;
 
   font-family: "Inter", sans-serif;
   font-size: v.$font-s-xs;
@@ -19,14 +19,36 @@ p {
   word-break: break-word;
 }
 
-h1,
-h2,
-h3 {
-  color: v.$color-white;
+// h1,
+// h2,
+// h3 {
+//   color: v.$color-white;
+// }
+
+// p {
+//   color: v.$color-gray-light;
+// }
+
+.heading-primary {
+  font-size: v.$font-s-xl;
+  font-weight: v.$font-w-xl;
+  line-height: 1.2;
+
+  @include m.respondMax(v.$mobile-s) {
+    font-size: v.$font-s-l;
+  }
 }
 
-p {
-  color: v.$color-gray-light;
+.heading-secondary {
+  font-size: v.$font-s-l;
+  font-weight: v.$font-w-xl;
+  line-height: 1.25;
+}
+
+.heading-tertiary {
+  font-size: v.$font-s-m;
+  font-weight: v.$font-w-xl;
+  line-height: 1.6;
 }
 
 // buttons
@@ -89,20 +111,43 @@ p {
 /////////////////////////////////////////
 /// HOME PAGE
 .home {
-  .heading-primary {
-    font-size: v.$font-s-xl;
-    font-weight: $font-w-xl;
-    line-height: 1.2;
-  }
-
   .paragraph {
-    color: v.$color-white;
+    // color: v.$color-white;
     font-weight: v.$font-w-xs;
+  }
+}
+
+.hero {
+  color: v.$color-white;
+}
+
+.about {
+  color: v.$color-black;
+
+  &__info {
+    text-align: left;
+
+    .paragraph {
+      color: v.$color-gray-dark;
+      font-weight: v.$font-w-m;
+      line-height: 1.4;
+    }
+  }
+}
+
+.cta {
+  .heading-tertiary {
+    color: v.$color-white;
   }
 }
 
 /////////////////////////////////////////
 /// FOOTER
+.footer {
+  color: v.$color-gray-light;
+  text-align: center;
+}
+
 .copyright {
   color: inherit;
   font-size: v.$font-s-2xs;
