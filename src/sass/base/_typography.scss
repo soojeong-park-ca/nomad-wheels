@@ -156,6 +156,26 @@ p {
   font-size: v.$font-s-2xl;
 }
 
+// testimonial
+.testimonial {
+  &__review {
+    .summary {
+      font-weight: v.$font-w-s;
+    }
+
+    .customer-name {
+      font-size: v.$font-s-s;
+      letter-spacing: 2px;
+    }
+  }
+
+  .btn--left i,
+  .btn--right i {
+    font-size: v.$font-s-xl;
+    color: v.$color-primary;
+  }
+}
+
 /////////////////////////////////////////
 /// FOOTER
 .footer {

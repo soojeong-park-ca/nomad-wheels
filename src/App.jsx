@@ -7,7 +7,7 @@ import {
 
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
-// import About from "./pages/About";
+import Reviews from "./pages/Reviews";
 import Vans from "./pages/Vans";
 import Login, {
   loader as loginLoader,
@@ -18,14 +18,13 @@ import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
 
 import Error from "./components/Error";
-// import { requireAuth } from "./utils/requireAuth";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      {/* <Route path="about" element={<About />} /> */}
       <Route path="vans" element={<Vans />} />
+      <Route path="reviews" element={<Reviews />} />
       <Route
         path="login"
         element={<Login />}

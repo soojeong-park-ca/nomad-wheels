@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { customerTestimonials } from "../customer-testimonials";
 
@@ -13,15 +14,19 @@ export default function Testimonial() {
   const testimonialElements = customerTestimonials.map(item => (
     <div key={item.id} className="testimonial__item">
       <div className="testimonial__review">
-        <p>{item.summary}</p>
-        <hr width="50%" />
-        <p>{item.name}</p>
+        <p className="summary">
+          <i className="fa-solid fa-quote-left"></i>
+          {item.summary}
+          <i className="fa-solid fa-quote-right"></i>
+        </p>
+        <hr width="60%" />
+        <p className="customer-name">{item.name}</p>
       </div>
     </div>
   ));
 
-  function handleLeftBtnClick(e) {
-    e.stopPropagation();
+  function handleLeftBtnClick() {
+    // e.stopPropagation();
 
     if (appCtx.currentTestimonialIndex > 0) {
       appCtx.onLeftTestimonialClick();
@@ -30,8 +35,8 @@ export default function Testimonial() {
     }
   }
 
-  function handleRightBtnClick(e) {
-    e.stopPropagation();
+  function handleRightBtnClick() {
+    // e.stopPropagation();
 
     if (appCtx.currentTestimonialIndex < testimonialElements.length - 1) {
       appCtx.onRightTestimonialClick();
@@ -52,7 +57,7 @@ export default function Testimonial() {
           </h2>
           <hr className="margin-bottom-xl" />
 
-          <div className="testimonial__content">
+          <div className="testimonial__content margin-bottom-s">
             <div className="bg-video">
               <video className="bg-video__content" autoPlay muted loop>
                 <source src={testimonialBgVidMp4} type="video/mp4" />
@@ -60,24 +65,20 @@ export default function Testimonial() {
                 Your browser is not supported!
               </video>
             </div>
-            <div className="testimonial__list">
+            <div className="testimonial__text">
               {currentTestimonialElement}
-              <div
-                className="testimonial__btns"
-                onClick={e => handleLeftBtnClick(e)}
-              >
-                <button className="btn--left">
-                  <i className="fa-solid fa-arrow-left"></i>
-                </button>
-                <button
-                  className="btn--right"
-                  onClick={e => handleRightBtnClick(e)}
-                >
-                  <i className="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
+              <button className="btn--left" onClick={handleLeftBtnClick}>
+                <i className="fa-solid fa-arrow-left"></i>
+              </button>
+              <button className="btn--right" onClick={handleRightBtnClick}>
+                <i className="fa-solid fa-arrow-right"></i>
+              </button>
             </div>
           </div>
+
+          <Link to="reviews" className="btn btn--orange">
+            <div>Read more</div>
+          </Link>
         </div>
       </div>
     </section>

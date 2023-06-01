@@ -54,21 +54,27 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="."
-        onClick={() => appCtx.onCloseMobileNav()}
+        onClick={() => {
+          appCtx.onCloseMobileNav();
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
       >
         <div>Home</div>
       </NavLink>
-      {/* <NavLink
+      <NavLink
         className={({ isActive }) =>
           isActive
             ? "mobile-nav-link mobile-nav-link--active"
             : "mobile-nav-link"
         }
-        to="about"
-        onClick={() => appCtx.onCloseMobileNav()}
+        to="reviews"
+        onClick={() => {
+          appCtx.onCloseMobileNav();
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
       >
-        <div>About</div>
-      </NavLink> */}
+        <div>Reviews</div>
+      </NavLink>
       <NavLink
         className={({ isActive }) =>
           isActive
@@ -76,7 +82,10 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="vans"
-        onClick={() => appCtx.onCloseMobileNav()}
+        onClick={() => {
+          appCtx.onCloseMobileNav();
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
       >
         <div>Vans</div>
       </NavLink>
@@ -87,7 +96,10 @@ export default function Header() {
             : "mobile-nav-link"
         }
         to="host"
-        onClick={() => appCtx.onCloseMobileNav()}
+        onClick={() => {
+          appCtx.onCloseMobileNav();
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
       >
         <div>Host</div>
       </NavLink>
@@ -166,7 +178,10 @@ export default function Header() {
           <Link
             className="btn-logo btn-home"
             to="/"
-            onClick={() => appCtx.onCloseMobileNav()}
+            onClick={() => {
+              appCtx.onCloseMobileNav();
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            }}
           >
             <i className="fa-solid fa-van-shuttle logo-icon"></i> Nomad Wheels
           </Link>
