@@ -332,6 +332,7 @@ p {
   }
   .about__info-img-container-1 {
     grid-column: 1/2;
+    justify-content: right;
   }
   .about__info-img-container-2 {
     grid-column: 2/3;
