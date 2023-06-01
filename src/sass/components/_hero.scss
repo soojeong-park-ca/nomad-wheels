@@ -26,7 +26,9 @@
   }
 
   &__title {
+    max-width: 30rem;
     margin-top: 4rem;
+    margin-right: auto;
   }
 
   @include m.respondMax(v.$mobile-s) {
@@ -43,15 +45,19 @@
     // .paragraph {
     //   padding-right: 5rem;
     // }
-    &__title {
-      width: 30rem;
-    }
+    // &__title {
+    //   width: 30rem;
+    // }
   }
 
   @include m.respondMin(v.$laptop) {
     &__bg-img {
       object-position: 50% 68%;
       transform: scale(1.25);
+    }
+
+    .btn {
+      width: 25rem;
     }
   }
 }

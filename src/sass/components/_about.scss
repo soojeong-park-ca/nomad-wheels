@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .about {
   display: flex;
@@ -30,5 +31,11 @@
     border-radius: 5px;
 
     padding: 2rem;
+  }
+
+  @include m.respondMin(v.$laptop) {
+    .btn {
+      width: 10rem;
+    }
   }
 }

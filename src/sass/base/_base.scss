@@ -63,10 +63,6 @@ button {
   justify-content: center;
 
   padding: 0.625rem;
-
-  @include m.respondMin(v.$laptop) {
-    width: 10rem;
-  }
 }
 
 .btn--orange {
