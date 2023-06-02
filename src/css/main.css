@@ -435,8 +435,9 @@ input::placeholder {
 @media screen and (min-width: 48em) {
   .cta__content {
     background-color: transparent;
-    background-image: linear-gradient(105deg, rgba(15, 14, 23, 0.8) 0 69.9%, rgba(15, 14, 23, 0.3) 70% 100%), url("https://source.unsplash.com/5dyRmbOo-UQ");
+    background-image: linear-gradient(105deg, rgba(15, 14, 23, 0.5), rgba(15, 14, 23, 0.5)), url("https://source.unsplash.com/5dyRmbOo-UQ");
     background-size: cover;
+    background-position: 50% 70%;
     background-repeat: no-repeat;
     padding: 2.5rem 2rem;
   }
@@ -444,20 +445,13 @@ input::placeholder {
     width: 15rem;
   }
 }
-@media screen and (min-width: 53em) {
-  .cta__content {
-    background-image: linear-gradient(105deg, rgba(15, 14, 23, 0.8) 0 64.9%, rgba(15, 14, 23, 0.3) 65% 100%), url("https://source.unsplash.com/5dyRmbOo-UQ");
-  }
-}
 @media screen and (min-width: 64em) {
   .cta__content {
-    background-image: linear-gradient(105deg, rgba(15, 14, 23, 0.8) 0 54.9%, rgba(15, 14, 23, 0.3) 55% 100%), url("https://source.unsplash.com/5dyRmbOo-UQ");
     padding: 3rem 2.5rem;
   }
 }
 @media screen and (min-width: 80em) {
   .cta__content {
-    background-image: linear-gradient(105deg, rgba(15, 14, 23, 0.8) 0 49.9%, rgba(15, 14, 23, 0.3) 50% 100%), url("https://source.unsplash.com/5dyRmbOo-UQ");
     padding: 3.5rem 4rem;
   }
 }
@@ -751,9 +745,32 @@ input::placeholder {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  cursor: pointer;
 }
 .signup__success-btn i {
   font-size: 1.5rem;
+}
+@media screen and (min-width: 48em) {
+  .signup__content {
+    padding: 3.5rem 3rem;
+  }
+}
+@media screen and (min-width: 53em) {
+  .signup__content {
+    padding: 4rem 3.5rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .signup__content {
+    background-color: transparent;
+    background-image: linear-gradient(105deg, rgba(15, 14, 23, 0.8) 0 59.9%, rgba(15, 14, 23, 0.3) 60% 100%), url("https://source.unsplash.com/D7_FyuUfaEo");
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  .signup__form {
+    width: 50%;
+  }
 }
 
 .icon--check {
