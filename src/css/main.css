@@ -91,6 +91,10 @@ button {
   width: 100%;
 }
 
+.btn--black {
+  background-color: #0f0e17;
+}
+
 input,
 label {
   color: inherit;
@@ -628,6 +632,20 @@ p {
   .hero__title {
     max-width: 40rem;
   }
+}
+
+.page-not-found {
+  text-align: center;
+  margin-top: 4rem;
+}
+.page-not-found__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page-not-found a {
+  max-width: 20rem;
 }
 
 .signup__content {

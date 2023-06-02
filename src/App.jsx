@@ -17,6 +17,7 @@ import Login, {
 import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
 
+import NotFound from "./components/NotFound";
 import Error from "./components/Error";
 
 const router = createBrowserRouter(
@@ -35,6 +36,8 @@ const router = createBrowserRouter(
       <Route path="host" element={<ProtectedLayout />}>
         <Route index element={<Dashboard />} loader={dashboardLoader} />
       </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
