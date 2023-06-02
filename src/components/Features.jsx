@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Features() {
   return (
     <section id="features" className="features margin-bottom-2xl">
-      <div className="features__content app-padding-inline-default margin-bottom-xl">
+      <div className="features__content app-padding-inline-default">
         <div className="max-width center-hori">
           <h2 className="heading-secondary margin-bottom-m">
             Explore the exceptional features of Nomad Wheels

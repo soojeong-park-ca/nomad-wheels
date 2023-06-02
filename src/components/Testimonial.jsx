@@ -50,7 +50,7 @@ export default function Testimonial() {
 
   return (
     <section id="testimonial" className="testimonial margin-bottom-2xl">
-      <div className="app-padding-inline-default margin-bottom-xl">
+      <div className="app-padding-inline-default">
         <div className="max-width center-hori">
           <h2 className="heading-secondary margin-bottom-m">
             We make people genuinely happy

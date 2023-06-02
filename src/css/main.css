@@ -649,7 +649,7 @@ p {
 }
 
 .signup__content {
-  background-color: #ff8906;
+  background-color: #f25f4c;
   border-radius: 5px;
   padding: 2rem;
 }
@@ -782,6 +782,11 @@ p {
 
 section {
   width: 100%;
+}
+@media screen and (min-width: 64em) {
+  section .app-padding-inline-default {
+    margin-bottom: 4rem;
+  }
 }
 
 .host-navbar {
