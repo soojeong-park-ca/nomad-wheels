@@ -4,6 +4,7 @@ import {
   useNavigation,
   Form,
   redirect,
+  Link,
 } from "react-router-dom";
 
 import { loginUser } from "../api";
@@ -37,19 +38,13 @@ export async function action({ request }) {
     localStorage.setItem(key2, newValue2);
     publishCustomEvent("login", { key2, newValue2 });
 
-    // localStorage.setItem("userData", JSON.parse(userData));
-
     return redirect(pathname);
   } catch (err) {
     const key = "loggedin";
     const newValue = JSON.stringify(false);
-    // const key2 = "userData";
-    // const newValue2 = JSON.stringify(null);
 
     localStorage.setItem(key, newValue);
     publishCustomEvent("logout", { key, newValue });
-    // localStorage.setItem(key2, newValue2);
-    // publishEvent("logout", { key2, newValue2 });
 
     return err.message;
   }
@@ -72,13 +67,13 @@ export default function Login() {
 
       <Form method="post" replace className="login-form">
         <input
-          id="input-email"
+          id="signin-email"
           name="email"
           type="email"
           placeholder="Email address"
         />
         <input
-          id="input-password"
+          id="signin-password"
           name="password"
           type="password"
           placeholder="Password"
@@ -89,7 +84,7 @@ export default function Login() {
       </Form>
       <div className="signup">
         <div>
-          Don't have an account? <a href="/">Create one now</a>
+          Don't have an account? <Link to="..">Create one now</Link>
         </div>
       </div>
     </section>
