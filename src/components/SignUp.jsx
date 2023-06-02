@@ -2,7 +2,7 @@ import { Form, Link } from "react-router-dom";
 
 export default function SignUp() {
   return (
-    <section id="#signup" class="signup margin-bottom-2xl">
+    <section id="#signup" className="signup margin-bottom-2xl">
       <div className="app-padding-inline-default">
         <div className="max-width center-hori">
           <div className="signup__content">
@@ -42,8 +42,8 @@ export default function SignUp() {
                     id="rent"
                     className="form__radio-input"
                   />
-                  <label htmlFor="rent" class="form__radio-label">
-                    <span class="form__radio-btn"></span>Rent a van
+                  <label htmlFor="rent" className="form__radio-label">
+                    <span className="form__radio-btn"></span>Rent a van
                   </label>
                 </div>
 
@@ -54,8 +54,8 @@ export default function SignUp() {
                     id="host"
                     className="form__radio-input"
                   />
-                  <label htmlFor="host" class="form__radio-label">
-                    <span class="form__radio-btn"></span>Host a van
+                  <label htmlFor="host" className="form__radio-label">
+                    <span className="form__radio-btn"></span>Host a van
                   </label>
                 </div>
               </div>
