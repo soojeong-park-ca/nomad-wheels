@@ -199,9 +199,15 @@ input {
 }
 
 // signup
-// .signup {
-//   color: v.$color-white;
-// }
+.signup {
+  color: v.$color-white;
+
+  &__form {
+    input {
+      color: v.$color-black;
+    }
+  }
+}
 
 /////////////////////////////////////////
 /// LOGIN PAGE

@@ -1,6 +1,59 @@
-import { Form, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+// Form Validation
+const nameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
+const emailRegex =
+  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/;
+
+function isName(name) {
+  return nameRegex.test(name);
+}
+function isEmail(email) {
+  return emailRegex.test(email);
+}
 
 export default function SignUp() {
+  const [values, setValues] = useState({ name: "", email: "" });
+  const [errors, setErrors] = useState({});
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
+
+  const validateAndSubmitForm = e => {
+    e.preventDefault();
+
+    const updatedErrors = {};
+
+    if (!values.name.length) {
+      updatedErrors.name = "Invalid name";
+    }
+    if (!values.email.length) {
+      updatedErrors.email = "Invalid email";
+    }
+
+    if (!isName(values.name)) {
+      updatedErrors.name = "Invalid name";
+    }
+    if (!isEmail(values.email)) {
+      updatedErrors.email = "Invalid email address";
+    }
+
+    setErrors(updatedErrors);
+    setSignUpSuccess(false);
+
+    if (!Object.keys(updatedErrors).length) {
+      setSignUpSuccess(true);
+      // reset input field
+      setValues({ name: "", email: "" });
+    }
+  };
+
+  const setName = e => {
+    setValues(prev => ({ ...prev, name: e.target.value }));
+  };
+
+  const setEmail = e => {
+    setValues(prev => ({ ...prev, email: e.target.value }));
+  };
+
   return (
     <section id="#signup" className="signup margin-bottom-2xl">
       <div className="app-padding-inline-default">
@@ -9,7 +62,8 @@ export default function SignUp() {
             <h3 className="heading-tertiary margin-bottom-s">
               Start your adventure
             </h3>
-            <Form method="post" className="signup__form">
+
+            <form onSubmit={validateAndSubmitForm} className="signup__form">
               <div className="signup__form-group">
                 <label htmlFor="signup-name" className="signup__form-label">
                   Full Name
@@ -19,10 +73,16 @@ export default function SignUp() {
                   name="name"
                   type="text"
                   placeholder="Full name"
+                  value={values.name}
+                  onChange={setName}
+                  className={errors.name ? "input--invalid" : ""}
                 />
+                {errors.name && (
+                  <p className="error-text">&#9888; {errors.name}</p>
+                )}
               </div>
 
-              <div className="signup__form-group">
+              <div className="signup__form-group margin-bottom-s">
                 <label htmlFor="signup-email" className="signup__form-label">
                   Email Address
                 </label>
@@ -31,35 +91,41 @@ export default function SignUp() {
                   name="email"
                   type="email"
                   placeholder="Email address"
+                  value={values.email}
+                  onChange={setEmail}
+                  className={errors.email ? "input--invalid" : ""}
                 />
+                {errors.email && (
+                  <p className="error-text">&#9888; {errors.email}</p>
+                )}
               </div>
 
-              <div className="signup__form-group signup__form-group-radio">
-                <div className="form__radio">
-                  <input
-                    type="radio"
-                    name="signup-type"
-                    id="rent"
-                    className="form__radio-input"
-                  />
-                  <label htmlFor="rent" className="form__radio-label">
-                    <span className="form__radio-btn"></span>Rent a van
-                  </label>
+              <button type="submit" className="btn btn--orange">
+                <div>Sign up</div>
+              </button>
+            </form>
+            {signUpSuccess && (
+              <div className="signup__success">
+                <div
+                  className="signup__success-btn"
+                  onClick={() => {
+                    setSignUpSuccess(false);
+                  }}
+                >
+                  <i className="fa-solid fa-xmark"></i>
                 </div>
-
-                <div className="form__radio">
-                  <input
-                    type="radio"
-                    name="signup-type"
-                    id="host"
-                    className="form__radio-input"
-                  />
-                  <label htmlFor="host" className="form__radio-label">
-                    <span className="form__radio-btn"></span>Host a van
-                  </label>
+                <div className="margin-bottom-s">
+                  <i className="fa-solid fa-circle-check icon--check"></i>
                 </div>
+                <h4 className="heading-quarternary margin-bottom-xs">
+                  You're all signed up!
+                </h4>
+                <p>
+                  Please check your email for confirmation message we just sent
+                  you.
+                </p>
               </div>
-            </Form>
+            )}
           </div>
         </div>
       </div>

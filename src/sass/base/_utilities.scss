@@ -40,3 +40,14 @@
   width: 100%;
   max-width: 80rem;
 }
+
+// INPUT INVALID
+.input--invalid {
+  border: 3px solid v.$color-tertiary !important;
+}
+.error-text {
+  color: v.$color-tertiary;
+  font-size: v.$font-s-xs;
+  font-weight: v.$font-w-l;
+  margin-top: 0.5rem;
+}

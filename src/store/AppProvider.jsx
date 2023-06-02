@@ -2,17 +2,34 @@ import { useReducer } from "react";
 
 import AppContext from "./app-context";
 
+// for mobile / desktop versions of nav
 const WINDOW_RESIZE = "WINDOW_RESIZE";
 const CLICK_MOBILE_MENU = "CLICK_MOBILE_MENU";
 const CLOSE_MOBILE_NAV = "CLOSE_MOBILE_NAV";
 const PRESS_ESC_KEY = "PRESS_ESC_KEY ";
 const CLICK_NAV_OVERLAY = "CLICK_NAV_OVERLAY";
+
+// for testimonial section btns
 const CLICK_LEFT_TESTIMONIAL = "CLICK_LEFT_TESTIMONIAL";
 const CLICK_RIGHT_TESTIMONIAL = "CLICK_RIGHT_TESTIMONIAL";
 const RESET_TESTIMONIAL_INDEX_TO_0 = "RESET_TESTIMONIAL_INDEX_TO_0";
 const RESET_TESTIMONIAL_INDEX_TO_MAX = "RESET_TESTIMONIAL_INDEX_TO_MAX";
 
+// for signup form validation
+const NAME_IS_VALID = "NAME_IS_VALID";
+const NAME_IS_INVALID = "NAME_IS_NOT_VALID";
+const EMAIL_IS_VALID = "EMAIL_IS_VALID";
+const EMAIL_IS_INVALID = "EMAIL_IS_NOT_VALID";
+
+const FORM_IS_VALID = "FORM_IS_VALID";
+const FORM_IS_INVALID = "FORM_IS_NOT_VALID";
+const SUBMIT_SIGNUP_FORM = "SUBMIT_SIGNUP_FORM";
+
+const CHANGE_NAME_VAL = "CHANGE_NAME_VAL";
+const CHANGE_EMAIL_VAL = "CHANGE_EMAIL_VAL";
+
 const initialState = {
+  // for mobile / desktop versions of nav
   mobile: window.innerWidth <= 768,
   navOpen: false,
   onWindowResize: () => {},
@@ -21,11 +38,30 @@ const initialState = {
   onEscPress: () => {},
   onOverlayClick: () => {},
 
+  // for testimonial section btns
   currentTestimonialIndex: 0,
   onLeftTestimonialClick: () => {},
   onRightTestimonialClick: () => {},
   onResetTestimonialTo0: () => {},
   onResetTestimonialToMax: () => {},
+
+  // for signup form validation
+  nameIsValid: false,
+  emailIsValid: false,
+  onNameValid: () => {},
+  onEmailValid: () => {},
+  onNameInvalid: () => {},
+  onEmailInvalid: () => {},
+
+  formIsValid: false,
+  onFormValid: () => {},
+  onFormInvalid: () => {},
+
+  signupName: "",
+  signupEmail: "",
+  onNameValChange: () => {},
+  onEmailValChange: () => {},
+  onSignUpFormSubmit: () => {},
 };
 
 const reducer = (state, action) => {
@@ -68,6 +104,7 @@ const reducer = (state, action) => {
 export default function AppProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  // for mobile / desktop versions of nav
   function handleWindowResize() {
     dispatch({
       type: WINDOW_RESIZE,
@@ -90,6 +127,7 @@ export default function AppProvider({ children }) {
     dispatch({ type: CLICK_NAV_OVERLAY });
   }
 
+  // for testimonial section btns
   function handleLeftTestimonialClick() {
     dispatch({ type: CLICK_LEFT_TESTIMONIAL });
   }
@@ -107,6 +145,7 @@ export default function AppProvider({ children }) {
   }
 
   const appContext = {
+    // for mobile / desktop versions of nav
     mobile: state.mobile,
     navOpen: state.navOpen,
     onWindowResize: handleWindowResize,
@@ -115,6 +154,7 @@ export default function AppProvider({ children }) {
     onEscPress: handleEscPress,
     onOverlayClick: handleOverlayClick,
 
+    // for testimonial section btns
     currentTestimonialIndex: state.currentTestimonialIndex,
     onLeftTestimonialClick: handleLeftTestimonialClick,
     onRightTestimonialClick: handleRightTestimonialClick,
