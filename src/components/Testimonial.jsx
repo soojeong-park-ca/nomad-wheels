@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 
 import { customerTestimonials } from "../customer-testimonials";
 
@@ -75,10 +74,6 @@ export default function Testimonial() {
               </button>
             </div>
           </div>
-
-          <Link to="reviews" className="btn btn--orange">
-            <div>Read more</div>
-          </Link>
         </div>
       </div>
     </section>

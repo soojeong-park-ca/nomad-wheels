@@ -67,20 +67,6 @@ export default function Header() {
             ? "mobile-nav-link mobile-nav-link--active"
             : "mobile-nav-link"
         }
-        to="reviews"
-        onClick={() => {
-          appCtx.onCloseMobileNav();
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        }}
-      >
-        <div>Reviews</div>
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "mobile-nav-link mobile-nav-link--active"
-            : "mobile-nav-link"
-        }
         to="vans"
         onClick={() => {
           appCtx.onCloseMobileNav();

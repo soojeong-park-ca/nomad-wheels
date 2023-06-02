@@ -7,7 +7,6 @@ import {
 
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
-import Reviews from "./pages/Reviews";
 import Vans from "./pages/Vans";
 import Login, {
   loader as loginLoader,
@@ -25,7 +24,6 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="vans" element={<Vans />} />
-      <Route path="reviews" element={<Reviews />} />
       <Route
         path="login"
         element={<Login />}
