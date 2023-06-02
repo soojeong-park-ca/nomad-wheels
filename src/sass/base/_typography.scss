@@ -69,6 +69,28 @@ p {
   text-align: center;
 }
 
+// input related elements
+input,
+label {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input {
+  text-indent: v.$font-s-xs;
+  border: none;
+  background-color: v.$color-input-bg;
+
+  &::placeholder {
+    color: v.$color-gray-light;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: v.$font-w-s;
+  }
+}
+
 /////////////////////////////////////////
 /// HEADER
 .btn-logo {

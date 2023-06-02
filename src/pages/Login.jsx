@@ -59,7 +59,7 @@ export default function Login() {
     <section id="login" className="login margin-bottom-2xl">
       <div className="app-padding-inline-default">
         <div className="max-width center-hori">
-          <div className="login__content">
+          <div className="login__content center-hori">
             <h1 className="heading-primary margin-bottom-s">
               Sign in to your account
             </h1>

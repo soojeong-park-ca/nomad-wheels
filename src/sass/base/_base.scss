@@ -126,23 +126,3 @@ button {
     opacity: 0;
   }
 }
-
-// input related elements
-input,
-label {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-input {
-  border: none;
-
-  &::placeholder {
-    color: v.$color-gray-light;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-  }
-}
