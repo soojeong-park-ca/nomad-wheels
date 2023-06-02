@@ -54,6 +54,7 @@ a {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .btn {
@@ -113,6 +114,17 @@ button {
 
 .btn--black {
   background-color: v.$color-black;
+}
+
+.btn:disabled {
+  background-color: v.$color-tertiary;
+  cursor: not-allowed;
+
+  &:after,
+  &:before {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 // input related elements

@@ -45,6 +45,7 @@ a {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .btn {
@@ -93,6 +94,15 @@ button {
 
 .btn--black {
   background-color: #0f0e17;
+}
+
+.btn:disabled {
+  background-color: #e53170;
+  cursor: not-allowed;
+}
+.btn:disabled:after, .btn:disabled:before {
+  visibility: hidden;
+  opacity: 0;
 }
 
 input,
@@ -251,6 +261,24 @@ p {
 .testimonial .btn--right i {
   font-size: 2.25rem;
   color: #ff8906;
+}
+
+.redirect-message,
+.error-message {
+  color: #e53170;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.login .signup {
+  text-align: center;
+}
+.login .signup a {
+  color: #ff8906;
+  font-weight: 600;
 }
 
 .footer {
@@ -649,7 +677,7 @@ p {
 }
 
 .signup__content {
-  background-color: #f25f4c;
+  background-color: #ff8906;
   border-radius: 5px;
   padding: 2rem;
 }
@@ -810,6 +838,41 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.login {
+  margin-top: 4rem;
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+.login__form input {
+  border: 1px solid #d1d5db;
+  height: 2.625rem;
+  text-indent: 16px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+.login__form input:focus {
+  outline: none;
+}
+.login__form input:first-of-type {
+  border-radius: 6px 6px 0px 0px;
+}
+.login__form input:last-of-type {
+  border-radius: 0px 0px 6px 6px;
+  border-top: none;
+}
+.login__form input::placeholder {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.login__form button {
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

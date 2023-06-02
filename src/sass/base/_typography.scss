@@ -182,6 +182,29 @@ p {
 // }
 
 /////////////////////////////////////////
+/// LOGIN PAGE
+.redirect-message,
+.error-message {
+  color: v.$color-tertiary;
+  font-size: v.$font-s-xs;
+  font-weight: v.$font-w-l;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.login {
+  .signup {
+    text-align: center;
+
+    a {
+      color: v.$color-primary;
+      font-weight: v.$font-w-l;
+    }
+  }
+}
+
+/////////////////////////////////////////
 /// FOOTER
 .footer {
   color: v.$color-gray-light;

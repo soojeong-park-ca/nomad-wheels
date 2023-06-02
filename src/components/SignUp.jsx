@@ -3,7 +3,7 @@ import { Form, Link } from "react-router-dom";
 export default function SignUp() {
   return (
     <section id="#signup" class="signup margin-bottom-2xl">
-      <div className="app-padding-inline-default margin-bottom-xl">
+      <div className="app-padding-inline-default">
         <div className="max-width center-hori">
           <div className="signup__content">
             <h3 className="heading-tertiary margin-bottom-s">

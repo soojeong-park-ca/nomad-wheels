@@ -56,35 +56,55 @@ export default function Login() {
   const navigation = useNavigation();
 
   return (
-    <section id="login" className="login">
-      <h1 className="heading-primary">Sign in to your account</h1>
-      {redirectMessage && (
-        <h3 className="redirect-message">&#9888; {redirectMessage}</h3>
-      )}
-      {errorMessage && (
-        <h3 className="error-message">&#9888; {errorMessage}</h3>
-      )}
+    <section id="login" className="login margin-bottom-2xl">
+      <div className="app-padding-inline-default">
+        <div className="max-width center-hori">
+          <div className="login__content">
+            <h1 className="heading-primary margin-bottom-s">
+              Sign in to your account
+            </h1>
+            {redirectMessage && (
+              <div className="redirect-message margin-bottom-xs">
+                &#9888; {redirectMessage}
+              </div>
+            )}
+            {errorMessage && (
+              <div className="error-message margin-bottom-xs">
+                &#9888; {errorMessage}
+              </div>
+            )}
 
-      <Form method="post" replace className="login-form">
-        <input
-          id="signin-email"
-          name="email"
-          type="email"
-          placeholder="Email address"
-        />
-        <input
-          id="signin-password"
-          name="password"
-          type="password"
-          placeholder="Password"
-        />
-        <button style={{ backgroundColor: "yellow", padding: "1rem" }}>
-          {navigation.state === "submitting" ? "Signing in..." : "Sign in"}
-        </button>
-      </Form>
-      <div className="signup">
-        <div>
-          Don't have an account? <Link to="..">Create one now</Link>
+            <Form method="post" replace className="login__form">
+              <input
+                id="signin-email"
+                name="email"
+                type="email"
+                placeholder="Email address"
+              />
+              <input
+                id="signin-password"
+                name="password"
+                type="password"
+                placeholder="Password"
+              />
+              <button
+                className="btn btn--orange margin-bottom-s"
+                disabled={navigation.state === "submitting"}
+              >
+                <div>
+                  {navigation.state === "submitting"
+                    ? "Signing in..."
+                    : "Sign in"}
+                </div>
+              </button>
+            </Form>
+
+            <div className="signup">
+              <div>
+                Don't have an account? <Link to="..">Create one now</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
