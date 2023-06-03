@@ -69,6 +69,13 @@ p {
   text-align: center;
 }
 
+.btn--underlined {
+  color: v.$color-gray-dark;
+  font-size: v.$font-s-xs;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}
+
 // input related elements
 input,
 label {
@@ -210,6 +217,114 @@ input {
 }
 
 /////////////////////////////////////////
+/// VANS PAGE
+.vans-heading-primary {
+  font-size: v.$font-s-l;
+
+  @include m.respondMin(v.$laptop-m) {
+    .heading-primary {
+      font-size: v.$font-s-xl;
+    }
+  }
+
+  @include m.respondMin(v.$laptop-l) {
+    .heading-primary {
+      font-size: v.$font-s-2xl;
+    }
+  }
+}
+
+.vans-heading-secondary {
+  font-size: v.$font-s-xs-2;
+
+  @include m.respondMin(v.$laptop) {
+    .vans-heading-secondary {
+      font-size: v.$font-s-s;
+    }
+  }
+
+  @include m.respondMin(v.$laptop-m) {
+    .vans-heading-secondary {
+      font-size: v.$font-s-m;
+    }
+  }
+
+  @include m.respondMin(v.$laptop-l) {
+    .vans-heading-secondary {
+      font-size: v.$font-s-l;
+    }
+  }
+
+  @include m.respondMin(v.$laptop-xl) {
+    .vans-heading-secondary {
+      font-size: v.$font-s-xl;
+    }
+  }
+}
+
+.van-tile {
+  &__link {
+    color: v.$color-black;
+  }
+
+  &__info {
+    text-align: center;
+
+    .paragraph {
+      color: v.$color-gray-dark;
+      font-size: v.$font-s-2xs;
+    }
+  }
+
+  @include m.respondMin(v.$laptop-m) {
+    &__info {
+      .paragraph {
+        font-size: v.$font-s-xs;
+      }
+    }
+  }
+
+  @include m.respondMin(v.$laptop-l) {
+    &__info {
+      .paragraph {
+        font-size: v.$font-s-s;
+      }
+    }
+  }
+
+  @include m.respondMin(v.$laptop-xl) {
+    &__info {
+      .paragraph {
+        font-size: v.$font-s-m;
+      }
+    }
+  }
+}
+
+.btn--filter {
+  @include m.respondMin(v.$laptop) {
+    font-size: v.$font-s-s;
+  }
+
+  @include m.respondMin(v.$laptop-m) {
+    font-size: v.$font-s-m;
+  }
+}
+
+.btn--van-type {
+  text-align: center;
+  color: v.$color-black;
+
+  @include m.respondMin(v.$laptop) {
+    font-size: v.$font-s-s;
+  }
+
+  @include m.respondMin(v.$laptop-m) {
+    font-size: v.$font-s-m;
+  }
+}
+
+/////////////////////////////////////////
 /// LOGIN PAGE
 .redirect-message,
 .error-message {
@@ -223,6 +338,7 @@ input {
 
 .login {
   .signup {
+    color: v.$color-black;
     text-align: center;
 
     a {

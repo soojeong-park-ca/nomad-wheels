@@ -7,7 +7,8 @@ import {
 
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
-import Vans from "./pages/Vans";
+import Vans, { loader as vansLoader } from "./pages/Vans";
+import VanDetail, { loader as vanDetailLoader } from "./components/VanDetail";
 import Login, {
   loader as loginLoader,
   action as loginAction,
@@ -23,7 +24,18 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path="vans" element={<Vans />} />
+      <Route
+        path="vans"
+        element={<Vans />}
+        errorElement={<Error />}
+        loader={vansLoader}
+      />
+      <Route
+        path="vans/:id"
+        element={<VanDetail />}
+        errorElement={<Error />}
+        loader={vanDetailLoader}
+      />
       <Route
         path="login"
         element={<Login />}
