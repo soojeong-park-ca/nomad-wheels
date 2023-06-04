@@ -25,7 +25,7 @@ html {
 body {
   max-width: 100%;
   min-height: 100%;
-  background-color: #fffffe;
+  background-color: #fff3e6;
   scroll-behavior: smooth;
   overscroll-behavior: none;
   overflow-x: hidden;
@@ -233,6 +233,16 @@ p {
 .btn--underlined {
   color: #2e2f3e;
   font-size: 1rem;
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}
+
+.btn--detail {
+  color: #2e2f3e;
+  font-size: 1rem;
+}
+.btn--detail:hover, .btn--detail:active {
   text-decoration-line: underline;
   text-underline-offset: 3px;
 }
@@ -432,6 +442,10 @@ input::placeholder {
   .btn--van-type {
     font-size: 1.5rem;
   }
+}
+
+.host-navbar .btn--underlined {
+  font-weight: 700;
 }
 
 .redirect-message,
@@ -710,6 +724,8 @@ input::placeholder {
   height: 6.25rem;
   position: fixed;
   top: 0;
+  display: flex;
+  align-items: center;
   background-color: #0f0e17;
   box-shadow: 0 0.15rem 0.3rem rgba(15, 14, 23, 0.15);
   z-index: 9999;
@@ -719,7 +735,6 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 2.25rem;
 }
 
 .btn-logo {
@@ -1068,7 +1083,7 @@ input::placeholder {
 }
 
 .van__detail-container {
-  background-color: #fffffe;
+  background-color: #fff3e6;
   margin-top: 4rem;
 }
 .van__detail-container .btn--van-type {
@@ -1267,17 +1282,125 @@ section {
 }
 
 .host-navbar {
-  font-size: 1.125rem;
-  font-weight: 500;
-  background-color: #fffffe;
-  padding: 2rem 1.625rem;
+  background-color: #fff3e6;
+  padding-block: 2rem;
+}
+.host-navbar__flexbox {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.host-navbar a:link,
+.host-navbar a:visited {
+  width: fit-content;
+  color: #2e2f3e;
+  text-align: center;
 }
 .host-navbar a:hover,
 .host-navbar a:active {
-  color: #0f0e17;
   text-decoration: underline;
   text-underline-offset: 3px;
   border: none;
+}
+
+/* EARNINGS */
+.host-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+.host-dashboard__earnings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #ffdcb4;
+  border-radius: 5px;
+}
+.host-dashboard__earnings-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr;
+  padding-block: 2.5rem;
+}
+.host-dashboard__earnings-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.host-dashboard__earnings-info p {
+  color: #2e2f3e;
+}
+.host-dashboard__earnings-info p span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.host-dashboard .heading-primary {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+.host-dashboard .heading-secondary {
+  font-size: 3rem;
+}
+
+.detail-btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hostDashboardEarnings .headingPrimary {
+  font-size: 2.25rem;
+  line-height: 0.6;
+}
+
+.hostDashboardEarnings > .info > p > span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.hostDashboardEarnings .headingSecondary {
+  font-size: 3rem;
+  line-height: 0.8;
+  font-weight: 800;
+}
+
+/* REVIEWS */
+.hostDashboardReviews {
+  display: flex;
+  align-items: center;
+}
+
+.hostDashboardReviews .headingSecondary {
+  font-size: 1.5rem;
+  line-height: 0.9;
+}
+
+.hostDashboardReviews .star {
+  font-size: 1.2rem;
+}
+
+.hostDashboardReviews p {
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.hostDashboardReviews p > span {
+  font-weight: 700;
+}
+
+/* Vans */
+.hostDashboardVans .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hostDashboardVans .headingSecondary {
+  font-size: 1.5rem;
+  line-height: 0.9;
 }
 
 .home {
@@ -1324,7 +1447,7 @@ section {
 }
 
 .vans {
-  background-color: #fffffe;
+  background-color: #fff3e6;
 }
 .vans .heading-primary {
   margin-top: 4rem;

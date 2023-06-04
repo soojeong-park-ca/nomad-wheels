@@ -1,15 +1,27 @@
 @use "../abstracts/variables" as v;
 
 .host-navbar {
-  font-size: 1.125rem;
-  font-weight: 500;
-  background-color: v.$color-white;
+  background-color: v.$color-primary-light-3;
 
-  padding: 2rem 1.625rem;
+  padding-block: 2rem;
+
+  &__flexbox {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  a:link,
+  a:visited {
+    width: fit-content;
+    color: v.$color-gray-dark;
+    text-align: center;
+  }
 
   a:hover,
   a:active {
-    color: v.$color-black;
     text-decoration: underline;
     text-underline-offset: 3px;
     border: none;

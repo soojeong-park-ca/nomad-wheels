@@ -8,6 +8,9 @@
   position: fixed;
   top: 0;
 
+  display: flex;
+  align-items: center;
+
   background-color: v.$color-black;
   box-shadow: 0 0.15rem 0.3rem rgba(v.$color-black, 0.15);
   z-index: 9999;
@@ -21,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
 
-  padding-block: 2.25rem;
+  // padding-block: 2.25rem;
 }
 
 .btn-logo {

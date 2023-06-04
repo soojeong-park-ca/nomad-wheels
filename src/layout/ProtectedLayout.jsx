@@ -3,48 +3,44 @@ import { NavLink, Outlet } from "react-router-dom";
 import CenteredMaxWidthBox from "../components/CenteredMaxWidthBox";
 
 export default function ProtectedLayout() {
-  const activeStyles = {
-    color: "v.$color-black",
-    fontWeight: "700",
-    textDecoration: "underline",
-    textUnderlineOffset: "3px",
-    border: "none",
-  };
-
   return (
     <>
-      <nav className="host-navbar">
+      <nav className="host-navbar app-padding-inline-default margin-bottom-s">
         <CenteredMaxWidthBox>
-          <NavLink
-            to="."
-            end
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-          >
-            Dashboard
-          </NavLink>
-          <NavLink
-            to="income"
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-          >
-            Income
-          </NavLink>
-          <NavLink
-            to="vans"
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-          >
-            Vans
-          </NavLink>
-          <NavLink
-            to="reviews"
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-          >
-            Reviews
-          </NavLink>
+          <div className="host-navbar__flexbox">
+            <NavLink
+              to="."
+              end
+              className={({ isActive }) => (isActive ? "btn--underlined" : "")}
+            >
+              Dashboard
+            </NavLink>
+            <NavLink
+              to="income"
+              className={({ isActive }) => (isActive ? "btn--underlined" : "")}
+            >
+              Income
+            </NavLink>
+            <NavLink
+              to="vans"
+              className={({ isActive }) => (isActive ? "btn--underlined" : "")}
+            >
+              Vans
+            </NavLink>
+            <NavLink
+              to="reviews"
+              className={({ isActive }) => (isActive ? "btn--underlined" : "")}
+            >
+              Reviews
+            </NavLink>
+          </div>
         </CenteredMaxWidthBox>
       </nav>
-      <CenteredMaxWidthBox>
-        <Outlet />
-      </CenteredMaxWidthBox>
+      {/* <div className="app-padding-inline-default">
+        <CenteredMaxWidthBox> */}
+      <Outlet />
+      {/* </CenteredMaxWidthBox>
+      </div> */}
     </>
   );
 }

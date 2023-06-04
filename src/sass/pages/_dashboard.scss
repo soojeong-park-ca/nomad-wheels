@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+/* EARNINGS */
+.host-dashboard {
+  display: flex;
+  flex-direction: column;
+
+  &__earnings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background-color: v.$color-primary-light-2;
+    border-radius: 5px;
+
+    // padding: 1rem 1.5rem;
+
+    &-grid {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 1fr;
+
+      padding-block: 2.5rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      p {
+        color: v.$color-gray-dark;
+
+        span {
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+      }
+    }
+  }
+
+  .heading-primary {
+    // width: 18.75rem;
+    font-size: v.$font-s-l;
+    line-height: 1.25;
+  }
+
+  .heading-secondary {
+    font-size: v.$font-s-2xl;
+  }
+}
+
+.detail-btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hostDashboardEarnings .headingPrimary {
+  font-size: 2.25rem;
+  line-height: 0.6;
+  // margin-bottom: 2rem;
+}
+
+.hostDashboardEarnings > .info > p {
+  // color: var(--color-gray-2);
+  // margin-bottom: 2rem;
+}
+
+.hostDashboardEarnings > .info > p > span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.hostDashboardEarnings .headingSecondary {
+  font-size: 3rem;
+  line-height: 0.8;
+  font-weight: 800;
+}
+
+/* REVIEWS */
+.hostDashboardReviews {
+  // background-color: #ffddb2;
+  // padding: 2.8rem 1.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.hostDashboardReviews .headingSecondary {
+  font-size: 1.5rem;
+  line-height: 0.9;
+}
+
+.hostDashboardReviews .star {
+  // color: var(--color-primary-dark);
+  // margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.hostDashboardReviews p {
+  font-size: 1.25rem;
+  // color: var(--color-gray-2);
+  line-height: 1.1;
+  // margin-left: 5px;
+  // margin-right: auto;
+}
+
+.hostDashboardReviews p > span {
+  font-weight: 700;
+  // color: var(--color-text-default);
+}
+
+/* Vans */
+.hostDashboardVans {
+  // padding: 2.375rem 1.7rem;
+}
+
+.hostDashboardVans .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // margin-bottom: 1.875rem;
+}
+
+.hostDashboardVans .headingSecondary {
+  font-size: 1.5rem;
+  line-height: 0.9;
+}
+
+.hostDashboardVans .hostVanTileLink {
+  // padding: 1.125rem 1.5rem;
+}
+
+.hostDashboardVans .hostVanTileDetail {
+  // padding: 0;
+  // margin-right: auto;
+}

@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as m;
 
 .van__detail-container {
-  background-color: v.$color-white;
+  background-color: v.$color-primary-light-3;
   margin-top: 4rem;
 
   .btn--van-type {

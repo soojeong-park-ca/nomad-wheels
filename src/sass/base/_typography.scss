@@ -5,7 +5,6 @@
 /// BASE
 body {
   // color: v.$color-gray-light;
-
   font-family: "Inter", sans-serif;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-m;
@@ -72,8 +71,20 @@ p {
 .btn--underlined {
   color: v.$color-gray-dark;
   font-size: v.$font-s-xs;
+  font-weight: v.$font-w-m;
   text-decoration-line: underline;
   text-underline-offset: 3px;
+}
+
+.btn--detail {
+  color: v.$color-gray-dark;
+  font-size: v.$font-s-xs;
+
+  &:hover,
+  &:active {
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 // input related elements
@@ -328,6 +339,17 @@ input {
 
   @include m.respondMin(v.$laptop-m) {
     font-size: v.$font-s-m;
+  }
+}
+
+/////////////////////////////////////////
+/// HOST PAGES
+.host-navbar {
+  // font-size: v.$font-s-s;
+
+  .btn--underlined {
+    // font-size: v.$font-s-s;
+    font-weight: v.$font-w-xl;
   }
 }
 
