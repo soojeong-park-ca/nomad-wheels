@@ -1,11 +1,9 @@
 @use "../abstracts/variables" as v;
 
 .host-navbar {
-  gap: 1.8rem;
-
   font-size: 1.125rem;
   font-weight: 500;
-  background-color: v.$color-black;
+  background-color: v.$color-white;
 
   padding: 2rem 1.625rem;
 

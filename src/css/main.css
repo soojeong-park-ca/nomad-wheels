@@ -257,6 +257,12 @@ input::placeholder {
   font-weight: 400;
 }
 
+.error-heading {
+  color: #e53170;
+  font-size: 2rem;
+  text-align: center;
+}
+
 .btn-logo {
   color: #fffffe;
   font-size: 1.25rem;
@@ -342,12 +348,12 @@ input::placeholder {
   font-size: 2rem;
 }
 @media screen and (min-width: 64em) {
-  .vans-heading-primary .heading-primary {
+  .vans-heading-primary .vans-heading-primary {
     font-size: 2.25rem;
   }
 }
 @media screen and (min-width: 80em) {
-  .vans-heading-primary .heading-primary {
+  .vans-heading-primary .vans-heading-primary {
     font-size: 3rem;
   }
 }
@@ -641,6 +647,10 @@ input::placeholder {
 }
 .left-arrow-icon {
   margin-right: 0.7rem;
+}
+
+.error {
+  margin-top: 4rem;
 }
 
 .features__list {
@@ -1257,10 +1267,9 @@ section {
 }
 
 .host-navbar {
-  gap: 1.8rem;
   font-size: 1.125rem;
   font-weight: 500;
-  background-color: #0f0e17;
+  background-color: #fffffe;
   padding: 2rem 1.625rem;
 }
 .host-navbar a:hover,

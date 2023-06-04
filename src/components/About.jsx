@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
+
 import insideSedanImg from "../assets/images/inside-sedan.png";
 import spaciousVanImg from "../assets/images/spacious-van.png";
 
@@ -7,7 +9,7 @@ export default function About() {
   return (
     <section id="about" className="about margin-bottom-2xl">
       <div className="about__info app-padding-inline-default margin-bottom-xl">
-        <div className="max-width center-hori">
+        <CenteredMaxWidthBox>
           <h2 className="heading-secondary margin-bottom-m">
             Don’t squeeze in a sedan when you could relax in a van.
           </h2>
@@ -40,11 +42,11 @@ export default function About() {
               and embrace the true essence of exploration.
             </p>
           </div>
-        </div>
+        </CenteredMaxWidthBox>
       </div>
 
       <div className="cta app-padding-inline-default">
-        <div className="max-width center-hori">
+        <CenteredMaxWidthBox>
           <div className="cta__content">
             <h3 className="heading-tertiary margin-bottom-m">
               Your destination is waiting.
@@ -56,7 +58,7 @@ export default function About() {
               <div>Explore our vans</div>
             </Link>
           </div>
-        </div>
+        </CenteredMaxWidthBox>
       </div>
     </section>
   );

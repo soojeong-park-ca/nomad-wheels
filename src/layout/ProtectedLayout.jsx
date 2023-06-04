@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 
+import CenteredMaxWidthBox from "../components/CenteredMaxWidthBox";
+
 export default function ProtectedLayout() {
   const activeStyles = {
     color: "v.$color-black",
@@ -12,33 +14,37 @@ export default function ProtectedLayout() {
   return (
     <>
       <nav className="host-navbar">
-        <NavLink
-          to="."
-          end
-          style={({ isActive }) => (isActive ? activeStyles : null)}
-        >
-          Dashboard
-        </NavLink>
-        <NavLink
-          to="income"
-          style={({ isActive }) => (isActive ? activeStyles : null)}
-        >
-          Income
-        </NavLink>
-        <NavLink
-          to="vans"
-          style={({ isActive }) => (isActive ? activeStyles : null)}
-        >
-          Vans
-        </NavLink>
-        <NavLink
-          to="reviews"
-          style={({ isActive }) => (isActive ? activeStyles : null)}
-        >
-          Reviews
-        </NavLink>
+        <CenteredMaxWidthBox>
+          <NavLink
+            to="."
+            end
+            style={({ isActive }) => (isActive ? activeStyles : null)}
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            to="income"
+            style={({ isActive }) => (isActive ? activeStyles : null)}
+          >
+            Income
+          </NavLink>
+          <NavLink
+            to="vans"
+            style={({ isActive }) => (isActive ? activeStyles : null)}
+          >
+            Vans
+          </NavLink>
+          <NavLink
+            to="reviews"
+            style={({ isActive }) => (isActive ? activeStyles : null)}
+          >
+            Reviews
+          </NavLink>
+        </CenteredMaxWidthBox>
       </nav>
-      <Outlet />
+      <CenteredMaxWidthBox>
+        <Outlet />
+      </CenteredMaxWidthBox>
     </>
   );
 }

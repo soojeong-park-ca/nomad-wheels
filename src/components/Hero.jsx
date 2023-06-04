@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
+
 import homeBgImg from "../assets/images/home-bg.png";
 
 export default function Hero() {
@@ -14,7 +16,7 @@ export default function Hero() {
         alt="A mountain view from a van window"
       />
 
-      <div className="max-width center-hori">
+      <CenteredMaxWidthBox>
         <div className="hero__title">
           <h1 className="heading-primary margin-bottom-s">
             You got the travel plans, we got the travel vans.
@@ -28,7 +30,7 @@ export default function Hero() {
         <Link to="/vans" className="btn btn--orange">
           <div>Find your van</div>
         </Link>
-      </div>
+      </CenteredMaxWidthBox>
     </section>
   );
 }

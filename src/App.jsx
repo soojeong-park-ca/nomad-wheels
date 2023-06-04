@@ -16,6 +16,7 @@ import Login, {
 
 import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
+import HostVans, { loader as hostVansLoader } from "./pages/Host/HostVans";
 
 import NotFound from "./components/NotFound";
 import Error from "./components/Error";
@@ -45,6 +46,44 @@ const router = createBrowserRouter(
 
       <Route path="host" element={<ProtectedLayout />}>
         <Route index element={<Dashboard />} loader={dashboardLoader} />
+        {/* <Route
+          path="income"
+          element={<Income />}
+          loader={async ({ request }) => await requireAuth(request, loginCtx)}
+        /> */}
+        <Route
+          path="vans"
+          element={<HostVans />}
+          loader={hostVansLoader}
+          errorElement={<Error />}
+        />
+        {/* <Route
+            path="vans/:id"
+            element={<HostVanDetail />}
+            loader={hostVanDetailLoader(loginCtx)}
+            errorElement={<Error />}
+          >
+            <Route
+              index
+              element={<HostVanInfo />}
+              loader={async ({ request }) =>
+                await requireAuth(request, loginCtx)
+              }
+            />
+            <Route
+              path="pricing"
+              element={<HostVanPricing />}
+              loader={async ({ request }) =>
+                await requireAuth(request, loginCtx)
+              }
+            />
+            <Route
+              path="photos"
+              element={<HostVanPhotos />}
+              loader={async ({ request }) =>
+                await requireAuth(request, loginCtx)
+              }
+            /> */}
       </Route>
 
       <Route path="*" element={<NotFound />} />

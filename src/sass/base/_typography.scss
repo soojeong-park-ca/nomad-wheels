@@ -98,6 +98,13 @@ input {
   }
 }
 
+// error
+.error-heading {
+  color: v.$color-tertiary;
+  font-size: v.$font-s-l;
+  text-align: center;
+}
+
 /////////////////////////////////////////
 /// HEADER
 .btn-logo {
@@ -222,13 +229,13 @@ input {
   font-size: v.$font-s-l;
 
   @include m.respondMin(v.$laptop-m) {
-    .heading-primary {
+    .vans-heading-primary {
       font-size: v.$font-s-xl;
     }
   }
 
   @include m.respondMin(v.$laptop-l) {
-    .heading-primary {
+    .vans-heading-primary {
       font-size: v.$font-s-2xl;
     }
   }
