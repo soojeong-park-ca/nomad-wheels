@@ -30,6 +30,14 @@
   margin-bottom: 8rem;
 }
 
+// PADDING
+.padding-block-xl {
+  padding-block: 4rem;
+}
+.padding-block-2xl {
+  padding-block: 8rem;
+}
+
 // CENTER
 .center-hori {
   margin: 0 auto;
@@ -43,10 +51,10 @@
 
 // INPUT INVALID
 .input--invalid {
-  border: 3px solid v.$color-tertiary !important;
+  border: 3px solid v.$color-error;
 }
 .error-text {
-  color: v.$color-tertiary;
+  color: v.$color-error;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-l;
   margin-top: 0.5rem;

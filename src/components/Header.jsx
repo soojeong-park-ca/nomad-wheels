@@ -8,6 +8,7 @@ import { publishCustomEvent } from "../utils/eventListeners";
 
 import LoginIcon from "./LoginIcon";
 import LogoutIcon from "./LogoutIcon";
+import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
 
 export default function Header() {
   const appCtx = useContext(AppContext);
@@ -160,7 +161,7 @@ export default function Header() {
   return (
     <>
       <header className="header app-padding-inline-default">
-        <div className="navbar max-width center-hori">
+        <CenteredMaxWidthBox className="navbar">
           <Link
             className="btn-logo btn-home"
             to="/"
@@ -172,7 +173,7 @@ export default function Header() {
             <i className="fa-solid fa-van-shuttle logo-icon"></i> Nomad Wheels
           </Link>
           {appCtx.mobile ? displayMobileNav : displayDesktopNav}
-        </div>
+        </CenteredMaxWidthBox>
       </header>
 
       {appCtx.mobile && (

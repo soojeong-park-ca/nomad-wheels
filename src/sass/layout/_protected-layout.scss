@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as v;
 
 .host-navbar {
-  background-color: v.$color-primary-light-3;
+  background-color: v.$color-primary;
 
   padding-block: 2rem;
 
@@ -16,7 +16,7 @@
   a:link,
   a:visited {
     width: fit-content;
-    color: v.$color-gray-dark;
+    color: v.$color-text-sub;
     text-align: center;
   }
 

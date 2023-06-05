@@ -1,5 +1,6 @@
 ///// FONT
 /// FONT SIZE + SPACING
+$font-s-3xs: 0.8rem;
 $font-s-2xs: 0.875rem;
 $font-s-xs: 1rem;
 $font-s-xs-2: 1.1rem;
@@ -18,24 +19,32 @@ $font-w-xl: 700;
 $font-w-2xl: 800;
 
 ///// COLOR
-$color-black: #0f0e17;
+// $color-black: #0f0e17;
+$color-text-main: #272343;
+$color-text-sub: #2d334a;
 $color-white: #fffffe;
 
-$color-gray-dark: #2e2f3e;
-$color-gray-light: #a7a9be;
+// $color-gray-dark: #2e2f3e;
+// $color-gray-light: #a7a9be;
 
-$color-primary: #ff8906;
-$color-primary-light-1: #ffc483;
-$color-primary-light-2: #ffdcb4;
-$color-primary-light-3: #fff3e6;
-$color-secondary: #f25f4c;
-$color-tertiary: #e53170;
+// $color-primary: #ff8906;
+$color-primary: #ffd803;
+$color-secondary: #e3f6f5;
+$color-tertiary: #bae8e8;
+// $color-primary-light-1: #ffdcb4;
+// $color-primary-light-2: #ffe7cd;
+// $color-primary-light-3: #fff3e6;
+// $color-secondary: #f25f4c;
+// $color-tertiary: #e53170;
 
-$color-input-bg: #fff;
+// $color-input-bg: #fff;
 
 $color-simple: #94c4f2;
 $color-rugged: #a2dcaa;
 $color-luxury: #ffee8b;
+
+$color-outline: #0000ff;
+$color-error: #ff0000;
 
 // MEDIA QUERIES
 $mobile-s: 374px;

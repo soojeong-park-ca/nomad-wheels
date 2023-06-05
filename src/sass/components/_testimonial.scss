@@ -4,6 +4,7 @@
 .testimonial {
   &__content {
     position: relative;
+    z-index: 100;
   }
 
   &__text {

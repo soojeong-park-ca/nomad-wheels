@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as m;
 
 .features {
+  background-color: v.$color-secondary;
+
   &__list {
     display: grid;
     grid-template-columns: 1fr;

@@ -1,3 +1,9 @@
+@use "./variables" as v;
+
+@mixin box-shadow-1 {
+  box-shadow: 0 0.15rem 0.3rem rgba(v.$color-text-main, 0.15);
+}
+
 // MEDIA QUERY MANAGER
 @mixin respondMax($breakpoint) {
   @media screen and (max-width: calc(calc($breakpoint / 16px) * 1em)) {

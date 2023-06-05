@@ -14,7 +14,7 @@
 }
 
 *:focus {
-  outline: 2px solid v.$color-tertiary;
+  outline: 2px solid v.$color-outline;
 
   &:not(:focus-visible) {
     outline: none;
@@ -22,7 +22,7 @@
 }
 
 *:focus-visible {
-  outline: 2px solid v.$color-tertiary;
+  outline: 2px solid v.$color-outline;
   border-radius: 2px;
 }
 
@@ -34,10 +34,7 @@ html {
 body {
   max-width: 100%;
   min-height: 100%;
-
-  // background-color: v.$color-white;
-  background-color: v.$color-primary-light-3;
-  // background-color: yellow;
+  background-color: v.$color-white;
 
   scroll-behavior: smooth;
   overscroll-behavior: none;
@@ -118,11 +115,11 @@ button {
 }
 
 .btn--black {
-  background-color: v.$color-black;
+  background-color: v.$color-text-main;
 }
 
 .btn--filter {
-  background-color: v.$color-black;
+  background-color: v.$color-text-main;
   padding: 0 0.5rem;
 
   transition: background-color 0.2s ease;
@@ -156,44 +153,44 @@ button {
   &:hover,
   &:active {
     background-color: v.$color-simple;
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 
   &.selected,
   &-fixed {
     background-color: v.$color-simple;
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 }
 .btn--rugged {
   &:hover,
   &:active {
     background-color: v.$color-rugged;
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 
   &.selected,
   &-fixed {
     background-color: v.$color-rugged;
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 }
 .btn--luxury {
   &:hover,
   &:active {
     background-color: v.$color-luxury;
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 
   &.selected,
   &-fixed {
     background-color: v.$color-luxury;
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 }
 
 .btn:disabled {
-  background-color: v.$color-tertiary;
+  background-color: v.$color-text-sub;
   cursor: not-allowed;
 
   &:after,

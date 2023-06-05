@@ -6,10 +6,7 @@ import homeBgImg from "../assets/images/home-bg.png";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="hero app-padding-inline-default margin-bottom-2xl"
-    >
+    <section id="hero" className="hero app-padding-inline-default">
       <img
         className="hero__bg-img"
         src={homeBgImg}

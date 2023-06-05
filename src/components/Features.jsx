@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
-
 export default function Features() {
   return (
-    <section id="features" className="features margin-bottom-2xl">
+    <section id="features" className="features padding-block-2xl">
       <div className="features__content app-padding-inline-default">
         <div className="max-width center-hori">
-          <h2 className="heading-secondary margin-bottom-m">
+          <h2 className="heading-secondary margin-bottom-l">
             Explore the exceptional features of Nomad Wheels
           </h2>
-          <hr className="margin-bottom-xl" />
           <div className="features__list">
             <div className="feature">
               <div className="feature__icon margin-bottom-s">

@@ -2,7 +2,39 @@
 
 .footer {
   width: 100%;
-  background-color: v.$color-black;
-  padding-block: 1.6rem;
-  // z-index: 9999;
+  background-color: v.$color-text-main;
+  transition: transform 0.15s ease;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    a:hover i,
+    a:active i {
+      transform: scale(1.1);
+    }
+  }
+
+  .site-links {
+    display: flex;
+    flex-direction: column;
+
+    &--1,
+    &--2 {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        line-height: 2;
+      }
+    }
+  }
 }

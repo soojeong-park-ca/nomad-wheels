@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .header {
   width: 100%;
@@ -11,20 +12,16 @@
   display: flex;
   align-items: center;
 
-  background-color: v.$color-black;
-  box-shadow: 0 0.15rem 0.3rem rgba(v.$color-black, 0.15);
+  background-color: v.$color-white;
+  @include m.box-shadow-1;
+  // box-shadow: 0 0.15rem 0.3rem rgba(v.$color-text-main, 0.15);
   z-index: 9999;
 }
 
 .navbar {
-  // width: 100%;
-  // max-width: 80rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  // padding-block: 2.25rem;
 }
 
 .btn-logo {
@@ -49,7 +46,6 @@
   min-height: 100vh;
 
   position: fixed;
-  // top: 6.25rem;
   top: 0;
   left: 0;
 
@@ -71,9 +67,8 @@
   justify-content: center;
   gap: 1rem;
 
-  background-color: rgba(v.$color-black, 0.8);
+  background-color: rgba(v.$color-white, 0.8);
   backdrop-filter: blur(6px);
-  // border: 5px solid v.$color-white;
   border-right: none;
 
   transition: transform 0.2s ease-out;

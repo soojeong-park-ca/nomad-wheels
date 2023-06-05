@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
 
 // Form Validation
 const nameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
@@ -17,6 +18,7 @@ export default function SignUp() {
   const [errors, setErrors] = useState({});
   const [signUpSuccess, setSignUpSuccess] = useState(false);
 
+  // checking input validity after form submit
   const validateAndSubmitForm = e => {
     e.preventDefault();
 
@@ -26,7 +28,7 @@ export default function SignUp() {
       updatedErrors.name = "Invalid name";
     }
     if (!values.email.length) {
-      updatedErrors.email = "Invalid email";
+      updatedErrors.email = "Invalid email address";
     }
 
     if (!isName(values.name)) {
@@ -46,6 +48,7 @@ export default function SignUp() {
     }
   };
 
+  // controlled input
   const setName = e => {
     setValues(prev => ({ ...prev, name: e.target.value }));
   };
@@ -54,10 +57,29 @@ export default function SignUp() {
     setValues(prev => ({ ...prev, email: e.target.value }));
   };
 
+  // Check for input validity when user makes changes
+  useEffect(() => {
+    const updatedErrors = {};
+
+    if (values.name.length && !isName(values.name)) {
+      updatedErrors.name = "Invalid name";
+    }
+
+    if (values.email.length && !isEmail(values.email)) {
+      updatedErrors.email = "Invalid email address";
+    }
+
+    setErrors(updatedErrors);
+  }, [values]);
+
   return (
-    <section id="#signup" className="signup margin-bottom-2xl">
+    <section id="#signup" className="signup padding-block-2xl">
       <div className="app-padding-inline-default">
-        <div className="max-width center-hori">
+        <CenteredMaxWidthBox>
+          <h2 className="heading-secondary margin-bottom-l">
+            Join the #NomadWheels!
+          </h2>
+
           <div className="signup__content">
             <h3 className="heading-tertiary margin-bottom-s">
               Start your adventure
@@ -127,7 +149,7 @@ export default function SignUp() {
               </div>
             )}
           </div>
-        </div>
+        </CenteredMaxWidthBox>
       </div>
     </section>
   );

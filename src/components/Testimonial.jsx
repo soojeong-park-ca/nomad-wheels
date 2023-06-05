@@ -2,6 +2,8 @@ import { useContext } from "react";
 
 import { customerTestimonials } from "../customer-testimonials";
 
+import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
+
 import testimonialBgVidMp4 from "../assets/images/videos/testimonial-bg-vid.mp4";
 import testimonialBgVidWebm from "../assets/images/videos/testimonial-bg-vid.webm";
 
@@ -25,8 +27,6 @@ export default function Testimonial() {
   ));
 
   function handleLeftBtnClick() {
-    // e.stopPropagation();
-
     if (appCtx.currentTestimonialIndex > 0) {
       appCtx.onLeftTestimonialClick();
     } else {
@@ -35,8 +35,6 @@ export default function Testimonial() {
   }
 
   function handleRightBtnClick() {
-    // e.stopPropagation();
-
     if (appCtx.currentTestimonialIndex < testimonialElements.length - 1) {
       appCtx.onRightTestimonialClick();
     } else {
@@ -48,13 +46,12 @@ export default function Testimonial() {
     testimonialElements[appCtx.currentTestimonialIndex];
 
   return (
-    <section id="testimonial" className="testimonial margin-bottom-2xl">
+    <section id="testimonial" className="testimonial padding-block-2xl">
       <div className="app-padding-inline-default">
-        <div className="max-width center-hori">
-          <h2 className="heading-secondary margin-bottom-m">
+        <CenteredMaxWidthBox>
+          <h2 className="heading-secondary margin-bottom-l">
             We make people genuinely happy
           </h2>
-          <hr className="margin-bottom-xl" />
 
           <div className="testimonial__content margin-bottom-s">
             <div className="bg-video">
@@ -74,7 +71,7 @@ export default function Testimonial() {
               </button>
             </div>
           </div>
-        </div>
+        </CenteredMaxWidthBox>
       </div>
     </section>
   );

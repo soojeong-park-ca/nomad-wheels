@@ -4,7 +4,6 @@
 /////////////////////////////////////////
 /// BASE
 body {
-  // color: v.$color-gray-light;
   font-family: "Inter", sans-serif;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-m;
@@ -22,6 +21,11 @@ p {
   @include m.respondMin(v.$laptop-2) {
     font-size: v.$font-s-xs-2;
   }
+}
+
+a,
+button {
+  color: v.$color-text-main;
 }
 
 .heading-primary {
@@ -61,7 +65,6 @@ p {
 
 // buttons
 .btn {
-  color: v.$color-white;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-xl;
   line-height: 2;
@@ -69,7 +72,7 @@ p {
 }
 
 .btn--underlined {
-  color: v.$color-gray-dark;
+  color: v.$color-text-sub;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-m;
   text-decoration-line: underline;
@@ -77,7 +80,7 @@ p {
 }
 
 .btn--detail {
-  color: v.$color-gray-dark;
+  color: v.$color-text-sub;
   font-size: v.$font-s-xs;
 
   &:hover,
@@ -99,10 +102,10 @@ label {
 input {
   text-indent: v.$font-s-xs;
   border: none;
-  background-color: v.$color-input-bg;
+  background-color: v.$color-white;
 
   &::placeholder {
-    color: v.$color-gray-light;
+    color: rgba(v.$color-text-sub, 0.7);
     font-family: inherit;
     font-size: inherit;
     font-weight: v.$font-w-s;
@@ -111,7 +114,7 @@ input {
 
 // error
 .error-heading {
-  color: v.$color-tertiary;
+  color: v.$color-text-main;
   font-size: v.$font-s-l;
   text-align: center;
 }
@@ -119,32 +122,32 @@ input {
 /////////////////////////////////////////
 /// HEADER
 .btn-logo {
-  color: v.$color-white;
+  color: v.$color-text-main;
   font-size: v.$font-s-s;
 }
 
 .logo-icon {
-  color: v.$color-primary;
+  color: v.$color-text-main;
   font-size: v.$font-s-m;
 }
 
 // mobile nav
 
 .menu-icon {
-  color: v.$color-white;
+  color: v.$color-text-main;
   font-size: v.$font-s-m;
 }
 
 .mobile-nav-link {
   div {
-    color: v.$color-white;
+    color: v.$color-text-main;
     font-size: v.$font-s-m;
   }
 
   &:hover,
   &--active {
     div {
-      color: v.$color-black;
+      color: v.$color-text-main;
     }
   }
 }
@@ -160,7 +163,7 @@ input {
 
 .login-icon,
 .logout-icon {
-  color: v.$color-white;
+  color: v.$color-text-main;
   font-size: v.$font-s-m;
 }
 
@@ -168,24 +171,24 @@ input {
 /// HOME PAGE
 .home {
   .paragraph {
-    font-weight: v.$font-w-xs;
+    font-weight: v.$font-w-s;
   }
 }
 
 // hero
 .hero {
-  color: v.$color-white;
+  color: darken(v.$color-text-main, 10%);
 }
 
 // about
 .about {
-  color: v.$color-black;
+  color: v.$color-text-main;
 
   &__info {
     text-align: left;
 
     .paragraph {
-      color: v.$color-gray-dark;
+      color: v.$color-text-sub;
       font-weight: v.$font-w-m;
       line-height: 1.4;
     }
@@ -225,11 +228,16 @@ input {
 
 // signup
 .signup {
-  color: v.$color-white;
+  color: v.$color-text-main;
+  background-color: v.$color-secondary;
+
+  &__content {
+    color: v.$color-white;
+  }
 
   &__form {
     input {
-      color: v.$color-black;
+      color: v.$color-text-main;
     }
   }
 }
@@ -282,14 +290,14 @@ input {
 
 .van-tile {
   &__link {
-    color: v.$color-black;
+    color: v.$color-text-main;
   }
 
   &__info {
     text-align: center;
 
     .paragraph {
-      color: v.$color-gray-dark;
+      color: v.$color-text-sub;
       font-size: v.$font-s-2xs;
     }
   }
@@ -331,7 +339,7 @@ input {
 
 .btn--van-type {
   text-align: center;
-  color: v.$color-black;
+  color: v.$color-text-main;
 
   @include m.respondMin(v.$laptop) {
     font-size: v.$font-s-s;
@@ -357,7 +365,7 @@ input {
 /// LOGIN PAGE
 .redirect-message,
 .error-message {
-  color: v.$color-tertiary;
+  color: v.$color-text-main;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-l;
   text-align: center;
@@ -367,7 +375,7 @@ input {
 
 .login {
   .signup {
-    color: v.$color-black;
+    color: v.$color-text-main;
     text-align: center;
 
     a {
@@ -380,13 +388,21 @@ input {
 /////////////////////////////////////////
 /// FOOTER
 .footer {
-  color: v.$color-gray-light;
+  color: v.$color-white;
   text-align: center;
+
+  a,
+  i {
+    color: v.$color-white;
+  }
+
+  i {
+    font-size: v.$font-s-s;
+  }
 }
 
 .copyright {
-  color: inherit;
-  font-size: v.$font-s-2xs;
+  font-size: v.$font-s-3xs;
   font-weight: inherit;
   line-height: 1.64;
   text-transform: uppercase;
