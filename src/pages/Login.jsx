@@ -99,7 +99,7 @@ export default function Login() {
               </button>
             </Form>
 
-            <div className="signup">
+            <div className="signup-text">
               <div>
                 Don't have an account? <Link to="..">Create one now</Link>
               </div>

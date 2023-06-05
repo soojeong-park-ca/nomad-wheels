@@ -12,17 +12,8 @@
   width: 4rem;
   height: 4rem;
   border: 8px solid;
-  border-color: v.$color-primary transparent v.$color-primary transparent;
+  border-color: v.$color-text-main transparent v.$color-text-main transparent;
   margin-top: 8rem;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

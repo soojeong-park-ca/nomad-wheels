@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { useLocation, useLoaderData, defer, Await } from "react-router-dom";
 
+import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
 import BackToAllVansBtn from "../components/BackToAllVansBtn";
 
 import { fetchVan } from "../api";
@@ -17,13 +18,12 @@ export default function VanDetail() {
   const location = useLocation();
   // console.log("location: ", location);
   const dataPromise = useLoaderData();
-  // using optional chaining ?.
   const backTo = location.state?.search || "";
 
   return (
-    <section id="van" className="van margin-bottom-2xl">
+    <section id="van" className="van padding-block-xl">
       <div className="app-padding-inline-default margin-bottom-xl">
-        <div className="max-width center-hori">
+        <CenteredMaxWidthBox>
           <div className="van__detail-container">
             <BackToAllVansBtn
               to={`..${backTo}`}
@@ -72,7 +72,7 @@ export default function VanDetail() {
               </Await>
             </Suspense>
           </div>
-        </div>
+        </CenteredMaxWidthBox>
       </div>
     </section>
   );

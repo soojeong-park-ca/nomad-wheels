@@ -11,10 +11,8 @@
     flex-direction: column;
     gap: 1rem;
 
-    background-color: v.$color-primary;
+    background-color: v.$color-secondary;
     border-radius: 5px;
-
-    // padding: 1rem 1.5rem;
 
     &-grid {
       width: 100%;
@@ -42,100 +40,84 @@
     }
   }
 
-  .heading-primary {
-    // width: 18.75rem;
-    font-size: v.$font-s-l;
-    line-height: 1.25;
+  &__reviews {
+    background-color: v.$color-tertiary;
+
+    &-grid {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 1fr;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-block: 2.5rem;
+    }
+
+    .review-score {
+      display: flex;
+      align-items: center;
+
+      .icon-star {
+        margin-right: 5px;
+      }
+    }
   }
 
-  .heading-secondary {
-    font-size: v.$font-s-2xl;
+  &__vans {
+    background-color: v.$color-secondary;
+
+    &-box {
+      padding-block: 2.5rem 8rem;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+
+      .btn--detail {
+        width: fit-content;
+      }
+    }
   }
 }
 
-.detail-btn-box {
+.hostvans-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.hostDashboardEarnings .headingPrimary {
-  font-size: 2.25rem;
-  line-height: 0.6;
-  // margin-bottom: 2rem;
-}
+.hostvan-tile {
+  background-color: v.$color-white;
+  border-radius: 5px;
 
-.hostDashboardEarnings > .info > p {
-  // color: var(--color-gray-2);
-  // margin-bottom: 2rem;
-}
-
-.hostDashboardEarnings > .info > p > span {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 700;
-}
-
-.hostDashboardEarnings .headingSecondary {
-  font-size: 3rem;
-  line-height: 0.8;
-  font-weight: 800;
-}
-
-/* REVIEWS */
-.hostDashboardReviews {
-  // background-color: #ffddb2;
-  // padding: 2.8rem 1.7rem;
   display: flex;
-  align-items: center;
-}
+  flex-direction: column;
 
-.hostDashboardReviews .headingSecondary {
-  font-size: 1.5rem;
-  line-height: 0.9;
-}
+  padding: 1rem;
 
-.hostDashboardReviews .star {
-  // color: var(--color-primary-dark);
-  // margin-left: 1rem;
-  font-size: 1.2rem;
-}
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.hostDashboardReviews p {
-  font-size: 1.25rem;
-  // color: var(--color-gray-2);
-  line-height: 1.1;
-  // margin-left: 5px;
-  // margin-right: auto;
-}
+    margin-bottom: 1rem;
 
-.hostDashboardReviews p > span {
-  font-weight: 700;
-  // color: var(--color-text-default);
-}
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
 
-/* Vans */
-.hostDashboardVans {
-  // padding: 2.375rem 1.7rem;
-}
+  &__detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-.hostDashboardVans .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // margin-bottom: 1.875rem;
-}
-
-.hostDashboardVans .headingSecondary {
-  font-size: 1.5rem;
-  line-height: 0.9;
-}
-
-.hostDashboardVans .hostVanTileLink {
-  // padding: 1.125rem 1.5rem;
-}
-
-.hostDashboardVans .hostVanTileDetail {
-  // padding: 0;
-  // margin-right: auto;
+    margin-bottom: 1rem;
+  }
 }

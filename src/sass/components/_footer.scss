@@ -46,12 +46,16 @@
       justify-content: space-between;
     }
 
+    &__main {
+      margin-bottom: 0;
+    }
+
     .social-links {
       justify-content: start;
     }
 
     &__nav {
-      margin-bottom: 6rem;
+      margin-bottom: 4rem;
     }
 
     .site-links {
@@ -93,13 +97,6 @@
       flex-direction: row;
       align-items: center;
       gap: 6rem;
-
-      .site-links {
-        &--1,
-        &--2 {
-          gap: 2rem;
-        }
-      }
     }
   }
 }

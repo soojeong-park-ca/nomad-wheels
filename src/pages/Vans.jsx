@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { useLoaderData, useSearchParams, defer, Await } from "react-router-dom";
 
+import CenteredMaxWidthBox from "../components/CenteredMaxWidthBox";
 import Filter from "../components/Filter";
 import VansList from "../components/VansList";
 import AnimatedLoading from "../components/AnimatedLoading";
@@ -19,9 +20,9 @@ export default function Vans() {
   const typeFilter = searchParams.get("type");
 
   return (
-    <section id="vans" className="vans margin-bottom-2xl">
+    <section id="vans" className="vans padding-block-xl">
       <div className="app-padding-inline-default margin-bottom-xl">
-        <div className="max-width center-hori">
+        <CenteredMaxWidthBox>
           <h1 className="vans-heading-primary margin-bottom-s">
             Explore our vans
           </h1>
@@ -47,7 +48,7 @@ export default function Vans() {
               }}
             </Await>
           </Suspense>
-        </div>
+        </CenteredMaxWidthBox>
       </div>
     </section>
   );

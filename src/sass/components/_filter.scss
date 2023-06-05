@@ -21,4 +21,12 @@
       gap: 1.5rem;
     }
   }
+
+  @include m.respondMin(v.$laptop-l) {
+    &__box {
+      &.margin-bottom-l {
+        margin-bottom: 4rem;
+      }
+    }
+  }
 }

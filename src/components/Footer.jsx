@@ -3,11 +3,11 @@ import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
 
 export default function Footer() {
   return (
-    <footer className="footer padding-block-xl">
+    <footer className="footer padding-block-m">
       <div className="app-padding-inline-default">
         <CenteredMaxWidthBox>
           <div className="footer__content">
-            <div className="footer__main margin-bottom-xl">
+            <div className="footer__main margin-bottom-l">
               <Link
                 className="btn-logo btn-home margin-bottom-s"
                 to="/"

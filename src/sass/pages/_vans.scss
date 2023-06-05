@@ -2,9 +2,5 @@
 @use "../abstracts/mixins" as m;
 
 .vans {
-  background-color: v.$color-primary;
-
-  .heading-primary {
-    margin-top: 4rem;
-  }
+  background-color: v.$color-white;
 }

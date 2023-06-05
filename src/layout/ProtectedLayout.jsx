@@ -5,7 +5,7 @@ import CenteredMaxWidthBox from "../components/CenteredMaxWidthBox";
 export default function ProtectedLayout() {
   return (
     <>
-      <nav className="host-navbar app-padding-inline-default margin-bottom-s">
+      <nav className="host-navbar app-padding-inline-default">
         <CenteredMaxWidthBox>
           <div className="host-navbar__flexbox">
             <NavLink

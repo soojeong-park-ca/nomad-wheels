@@ -13,11 +13,14 @@ body {
 h1,
 h2,
 h3,
+h4,
 p {
   word-break: break-word;
 }
 
 p {
+  color: v.$color-text-sub;
+
   @include m.respondMin(v.$laptop-2) {
     font-size: v.$font-s-xs-2;
   }
@@ -247,15 +250,15 @@ input {
 .vans-heading-primary {
   font-size: v.$font-s-l;
 
-  @include m.respondMin(v.$laptop-m) {
-    .vans-heading-primary {
-      font-size: v.$font-s-xl;
-    }
+  @include m.respondMin(v.$laptop) {
+    font-size: v.$font-s-xl;
   }
 
   @include m.respondMin(v.$laptop-l) {
-    .vans-heading-primary {
-      font-size: v.$font-s-2xl;
+    font-size: v.$font-s-2xl;
+
+    &.margin-bottom-s {
+      margin-bottom: 3rem;
     }
   }
 }
@@ -264,27 +267,19 @@ input {
   font-size: v.$font-s-xs-2;
 
   @include m.respondMin(v.$laptop) {
-    .vans-heading-secondary {
-      font-size: v.$font-s-s;
-    }
+    font-size: v.$font-s-s;
   }
 
   @include m.respondMin(v.$laptop-m) {
-    .vans-heading-secondary {
-      font-size: v.$font-s-m;
-    }
+    font-size: v.$font-s-m;
   }
 
   @include m.respondMin(v.$laptop-l) {
-    .vans-heading-secondary {
-      font-size: v.$font-s-l;
-    }
+    font-size: v.$font-s-l;
   }
 
   @include m.respondMin(v.$laptop-xl) {
-    .vans-heading-secondary {
-      font-size: v.$font-s-xl;
-    }
+    font-size: v.$font-s-xl;
   }
 }
 
@@ -328,6 +323,9 @@ input {
 }
 
 .btn--filter {
+  // color: v.$color-text-main;
+  background-color: v.$color-secondary;
+
   @include m.respondMin(v.$laptop) {
     font-size: v.$font-s-s;
   }
@@ -361,11 +359,30 @@ input {
   }
 }
 
+.dashboard-heading-primary {
+  font-size: v.$font-s-l;
+  line-height: 1.25;
+}
+
+.dashboard-heading-secondary {
+  font-size: v.$font-s-2xl;
+}
+
+.icon-star {
+  color: v.$color-text-main;
+}
+
+.hostvan-tile {
+  .btn--detail {
+    text-align: right;
+  }
+}
+
 /////////////////////////////////////////
 /// LOGIN PAGE
 .redirect-message,
 .error-message {
-  color: v.$color-text-main;
+  color: v.$color-error;
   font-size: v.$font-s-xs;
   font-weight: v.$font-w-l;
   text-align: center;
@@ -374,13 +391,15 @@ input {
 }
 
 .login {
-  .signup {
+  .signup-text {
     color: v.$color-text-main;
     text-align: center;
 
     a {
-      color: v.$color-primary;
+      color: v.$color-text-sub;
       font-weight: v.$font-w-l;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
   }
 }
