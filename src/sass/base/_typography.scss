@@ -399,6 +399,28 @@ input {
   i {
     font-size: v.$font-s-s;
   }
+
+  .site-links {
+    &--1,
+    &--2 {
+      div {
+        line-height: 2;
+      }
+    }
+
+    &--2 {
+      font-size: v.$font-s-3xs;
+    }
+
+    a {
+      transition: color 0.15s ease;
+    }
+
+    a:hover,
+    a:active {
+      color: darken(v.$color-white, 10%);
+    }
+  }
 }
 
 .copyright {
