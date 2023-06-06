@@ -80,12 +80,14 @@ export default function Login() {
                 name="email"
                 type="email"
                 placeholder="Email address"
+                value="jane.doe@nw.com"
               />
               <input
                 id="signin-password"
                 name="password"
                 type="password"
                 placeholder="Password"
+                value="p123"
               />
               <button
                 className="btn btn--orange margin-bottom-s"
