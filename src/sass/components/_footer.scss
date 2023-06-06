@@ -6,6 +6,8 @@
   background-color: v.$color-text-main;
   transition: transform 0.15s ease;
 
+  padding-block: 3rem 2rem;
+
   &__content {
     display: flex;
     flex-direction: column;

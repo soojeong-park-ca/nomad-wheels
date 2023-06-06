@@ -359,12 +359,14 @@ input {
   }
 }
 
-.dashboard-heading-primary {
+.dashboard-heading-primary,
+.income-heading-primary {
   font-size: v.$font-s-l;
   line-height: 1.25;
 }
 
-.dashboard-heading-secondary {
+.dashboard-heading-secondary,
+.income-heading-secondary {
   font-size: v.$font-s-2xl;
 }
 
@@ -376,6 +378,12 @@ input {
   .btn--detail {
     text-align: right;
   }
+}
+
+.income-heading-tertiary {
+  font-size: v.$font-s-m;
+  font-weight: 700;
+  line-height: 1;
 }
 
 /////////////////////////////////////////

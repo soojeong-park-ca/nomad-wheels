@@ -16,10 +16,13 @@ import Login, {
 
 import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
+import Income from "./pages/Host/Income";
 import HostVans, { loader as hostVansLoader } from "./pages/Host/HostVans";
 
 import NotFound from "./components/NotFound";
 import Error from "./components/Error";
+
+import { requireAuth } from "./utils/requireAuth";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,11 +49,11 @@ const router = createBrowserRouter(
 
       <Route path="host" element={<ProtectedLayout />}>
         <Route index element={<Dashboard />} loader={dashboardLoader} />
-        {/* <Route
+        <Route
           path="income"
           element={<Income />}
-          loader={async ({ request }) => await requireAuth(request, loginCtx)}
-        /> */}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
         <Route
           path="vans"
           element={<HostVans />}

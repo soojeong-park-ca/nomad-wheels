@@ -3,7 +3,7 @@ import CenteredMaxWidthBox from "./CenteredMaxWidthBox";
 
 export default function Footer() {
   return (
-    <footer className="footer padding-block-m">
+    <footer className="footer">
       <div className="app-padding-inline-default">
         <CenteredMaxWidthBox>
           <div className="footer__content">
