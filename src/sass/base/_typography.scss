@@ -360,18 +360,21 @@ input {
 }
 
 .dashboard-heading-primary,
-.income-heading-primary {
+.income-heading-primary,
+.reviews-heading-primary {
   font-size: v.$font-s-l;
   line-height: 1.25;
 }
 
 .dashboard-heading-secondary,
-.income-heading-secondary {
+.income-heading-secondary,
+.reviews-heading-secondary {
   font-size: v.$font-s-2xl;
 }
 
 .icon-star {
-  color: v.$color-text-main;
+  // color: v.$color-text-main;
+  color: v.$color-stars;
 }
 
 .hostvan-tile {

@@ -2,7 +2,9 @@
 @use "../abstracts/mixins" as m;
 
 .host-income {
-  background-color: v.$color-secondary;
+  // background-color: v.$color-secondary;
+  background-color: v.$color-white;
+  padding-top: 4rem;
 
   p {
     color: v.$color-text-sub;
@@ -12,12 +14,6 @@
       text-underline-offset: 3px;
       font-weight: 700;
     }
-  }
-
-  img.graph {
-    width: 100%;
-    max-width: 31.25rem;
-    margin-bottom: 4rem;
   }
 
   &__flexbox {
@@ -34,21 +30,20 @@
 
   &__graph {
     width: 100%;
+    max-width: 31.25rem;
     height: 100%;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
 
     position: relative;
 
-    background-color: v.$color-white;
-    border-radius: 5px;
-
-    padding: 2rem 1rem;
+    // margin-bottom: 2.5rem;
   }
 
   &__transactions {
+    background-color: v.$color-secondary;
+    padding-block: 4rem 8rem;
+
     .transactions-title {
       display: flex;
       align-items: center;
@@ -69,6 +64,7 @@
     .transaction {
       width: 100%;
       background-color: v.$color-white;
+      // background-color: v.$color-secondary;
       border-radius: 5px;
 
       display: flex;

@@ -1,0 +1,181 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.host-reviews {
+  padding-top: 4rem;
+
+  p {
+    color: v.$color-text-sub;
+
+    span {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 700;
+    }
+  }
+
+  &__flexbox {
+    display: flex;
+    flex-direction: column;
+    // gap: 2.5rem;
+    gap: 3rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__graph {
+    width: 100%;
+    max-width: 31.25rem;
+    height: 100%;
+
+    display: flex;
+
+    position: relative;
+  }
+
+  &__detail {
+    background-color: v.$color-secondary;
+    padding-block: 4rem 8rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      flex-wrap: wrap;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+
+      background-color: v.$color-white;
+      border-radius: 5px;
+      padding: 2rem 1rem 1rem;
+    }
+  }
+}
+
+.host-review {
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+  }
+
+  &-stars {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &-hr {
+    margin-bottom: 2rem;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &-name {
+    color: v.$color-text-main;
+    font-weight: v.$font-w-xl;
+  }
+
+  &-date {
+    font-size: v.$font-s-2xs;
+    font-weight: v.$font-w-s;
+  }
+}
+
+/*
+.hostReviews {
+  padding: 2rem 1.7rem 4rem 1.7rem;
+}
+
+.hostReviews .topText {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hostReviews .topText .headingSecondary {
+  font-size: 2rem;
+  line-height: 1.05;
+  margin-right: 1.25rem;
+}
+
+.hostReviews .topText > p {
+  line-height: 1.4;
+  color: var(--color-gray-2);
+}
+
+.hostReviews .topText > p span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.graphContainer {
+  width: 100%;
+}
+
+.hostReviews img {
+  width: 100%;
+  max-width: 31.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.hostReviews .headingTertiary {
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.hostReviews .review {
+  margin-block: 1.2rem;
+}
+
+.hostReviews .review .info {
+  display: flex;
+  line-height: 2;
+  margin-block: 0.5rem;
+}
+
+.hostReviews .review .name {
+  margin-right: 0.625rem;
+  font-weight: 600;
+}
+
+.hostReviews .review .date {
+  color: var(--color-gray-6);
+}
+
+.hostReviews hr {
+  background-color: var(--color-gray-7);
+  height: 1px;
+  border: 0;
+}
+
+.hostReviews .reviewStar {
+  color: var(--color-primary-dark);
+  margin-right: 0.3rem;
+}
+
+*/

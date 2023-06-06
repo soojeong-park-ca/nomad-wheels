@@ -44,7 +44,7 @@
   }
 
   &__reviews {
-    background-color: v.$color-tertiary;
+    background-color: v.$color-white;
 
     &-grid {
       width: 100%;
@@ -59,6 +59,8 @@
     }
 
     .review-score {
+      width: fit-content;
+
       display: flex;
       align-items: center;
 

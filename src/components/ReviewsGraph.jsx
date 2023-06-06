@@ -20,32 +20,51 @@ ChartJS.register(
 );
 
 export const options = {
+  indexAxis: "y",
+  elements: {
+    bar: {
+      borderWidth: 0,
+    },
+  },
   responsive: true,
+  scales: {
+    x: {
+      stacked: true,
+      display: false,
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      stacked: true,
+      grid: {
+        display: false,
+      },
+    },
+  },
   plugins: {
     legend: {
-      position: "top",
+      display: false,
     },
     title: {
-      display: true,
-      text: "2022-2023 Income Chart",
+      display: false,
     },
   },
 };
 
-const labels = ["Jul", "Aug", "Sept", "Oct", "Nov", "Dec", "Jan"];
-const monthlyIncome = [930, 620, 590, 840, 980, 560, 720];
+const labels = ["☆☆☆☆☆", "☆☆☆☆", "☆☆☆", "☆☆", "☆"];
+const allReviews = [15, 12, 2, 1, 1];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: "Income ($)",
-      data: monthlyIncome,
+      data: allReviews,
       backgroundColor: "rgb(255, 216, 3)",
     },
   ],
 };
 
-export default function IncomeGraph() {
+export default function ReviewsGraph() {
   return <Bar options={options} data={data} />;
 }

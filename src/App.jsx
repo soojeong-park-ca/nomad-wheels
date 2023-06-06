@@ -18,6 +18,7 @@ import ProtectedLayout from "./layout/ProtectedLayout";
 import Dashboard, { loader as dashboardLoader } from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import HostVans, { loader as hostVansLoader } from "./pages/Host/HostVans";
+import Reviews from "./pages/Host/Reviews";
 
 import NotFound from "./components/NotFound";
 import Error from "./components/Error";
@@ -87,6 +88,11 @@ const router = createBrowserRouter(
                 await requireAuth(request, loginCtx)
               }
             /> */}
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />

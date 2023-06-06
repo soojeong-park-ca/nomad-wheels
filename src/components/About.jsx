@@ -12,13 +12,11 @@ export default function About() {
           <div className="about__info-detail">
             <p className="paragraph">
               Leave the confines of cramped sedans behind and embrace the
-              liberating comfort of a spacious van.
-            </p>
-            <p>
-              Nomad Wheels invites you to experience unforgettable travel
-              moments that go beyond the ordinary. Our thoughtfully selected
-              range of travel vans ensures that you can bid farewell to
-              squeezing and welcome a world of freedom and relaxation.
+              liberating comfort of a spacious van. Nomad Wheels invites you to
+              experience unforgettable travel moments that go beyond the
+              ordinary. Our thoughtfully selected range of travel vans ensures
+              that you can bid farewell to squeezing and welcome a world of
+              freedom and relaxation.
             </p>
           </div>
         </CenteredMaxWidthBox>

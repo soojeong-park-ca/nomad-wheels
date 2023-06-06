@@ -45,25 +45,25 @@ export async function fetchVan(id) {
   return vanData;
 }
 
-export async function fetchHostVans() {
-  const q = query(vansCollectionRef, where("hostId", "==", "123"));
-  const allHostVansSnapshot = await getDocs(q);
-  const dataArr = allHostVansSnapshot.docs.map(doc => ({
-    ...doc.data(),
-    id: doc.id,
-  }));
+// export async function fetchHostVans() {
+//   const q = query(vansCollectionRef, where("hostId", "==", "123"));
+//   const allHostVansSnapshot = await getDocs(q);
+//   const dataArr = allHostVansSnapshot.docs.map(doc => ({
+//     ...doc.data(),
+//     id: doc.id,
+//   }));
 
-  console.log("dataArr");
-  return dataArr;
-}
+//   console.log("dataArr");
+//   return dataArr;
+// }
 
-export async function fetchHostVan(id) {
-  const docRef = doc(db, "vans", id);
-  const vanSnapshot = await getDoc(docRef);
-  const vanData = { ...vanSnapshot.data(), id: vanSnapshot.id };
+// export async function fetchHostVan(id) {
+//   const docRef = doc(db, "vans", id);
+//   const vanSnapshot = await getDoc(docRef);
+//   const vanData = { ...vanSnapshot.data(), id: vanSnapshot.id };
 
-  return vanData;
-}
+//   return vanData;
+// }
 
 export async function loginUser({ email, password }) {
   const allUsersSnapshot = await getDocs(usersCollectionRef);
