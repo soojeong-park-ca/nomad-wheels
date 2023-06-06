@@ -14,7 +14,6 @@
 
   background-color: v.$color-white;
   @include m.box-shadow-1;
-  // box-shadow: 0 0.15rem 0.3rem rgba(v.$color-text-main, 0.15);
   z-index: 9999;
 }
 
@@ -68,6 +67,7 @@
   gap: 1rem;
 
   background-color: rgba(v.$color-white, 0.8);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   border-right: none;
 
