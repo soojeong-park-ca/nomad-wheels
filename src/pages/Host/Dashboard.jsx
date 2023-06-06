@@ -1,9 +1,7 @@
-import { Suspense } from "react";
-import { defer, useLoaderData, Link, Await } from "react-router-dom";
+import { defer, useLoaderData, Link } from "react-router-dom";
 
 import CenteredMaxWidthBox from "../../components/CenteredMaxWidthBox";
-import AnimatedLoading from "../../components/AnimatedLoading";
-import Error from "../../components/Error";
+import HostVansEls from "../../components/HostVansEls";
 
 import { fetchVans } from "../../api";
 import { requireAuth } from "../../utils/requireAuth";
@@ -14,32 +12,32 @@ export async function loader({ request }) {
   return defer({ allVansData: fetchVans() });
 }
 
+export function renderDashboardHostVansElements(vans) {
+  return vans.map(van => {
+    return (
+      <div key={van.id} className="hostvan-tile">
+        <div className="hostvan-tile__img">
+          <img src={van.imageUrl} />
+        </div>
+        <div className="hostvan-tile__detail">
+          <h3>{van.name}</h3>
+          <p className="paragraph">
+            ${van.price}
+            <span>/day</span>
+          </p>
+        </div>
+        <Link to={`/host/vans/${van.id}`} className="btn--detail">
+          <p>View</p>
+        </Link>
+      </div>
+    );
+  });
+}
+
 export default function Dashboard() {
   const [userData] = useLocalStorage("userData", null);
-  console.log("userData from localStorage: ", userData);
+  // console.log("userData from localStorage: ", userData);
   const dataPromise = useLoaderData();
-
-  function renderDashboardHostVansElements(vans) {
-    return vans.map(van => {
-      return (
-        <div key={van.id} className="hostvan-tile">
-          <div className="hostvan-tile__img">
-            <img src={van.imageUrl} />
-          </div>
-          <div className="hostvan-tile__detail">
-            <h3>{van.name}</h3>
-            <p className="paragraph">
-              ${van.price}
-              <span>/day</span>
-            </p>
-          </div>
-          <Link to={`/host/vans/${van.id}`} className="btn--detail">
-            <p>View</p>
-          </Link>
-        </div>
-      );
-    });
-  }
 
   return (
     <div className="host-dashboard">
@@ -97,26 +95,7 @@ export default function Dashboard() {
                   View all
                 </Link>
               </div>
-              <Suspense fallback={<AnimatedLoading />}>
-                <Await
-                  resolve={dataPromise.allVansData}
-                  errorElement={<Error />}
-                >
-                  {loadedVans => {
-                    // console.log("loadedVans: ", loadedVans);
-                    const hostVans = loadedVans.filter(
-                      van => van.hostId === userData.id
-                    );
-                    console.log(hostVans);
-
-                    return (
-                      <div className="hostvans-list">
-                        {renderDashboardHostVansElements(hostVans)}
-                      </div>
-                    );
-                  }}
-                </Await>
-              </Suspense>
+              <HostVansEls dataPromise={dataPromise} userData={userData} />
             </div>
           </CenteredMaxWidthBox>
         </div>
