@@ -55,7 +55,13 @@ export default function Testimonial() {
 
           <div className="testimonial__content margin-bottom-s">
             <div className="bg-video">
-              <video className="bg-video__content" autoPlay muted loop>
+              <video
+                className="bg-video__content"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
                 <source src={testimonialBgVidMp4} type="video/mp4" />
                 <source src={testimonialBgVidWebm} type="video/webm" />
                 Your browser is not supported!
