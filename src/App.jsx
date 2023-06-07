@@ -85,12 +85,13 @@ const router = createBrowserRouter(
             element={<HostVanPhotos />}
             loader={async ({ request }) => await requireAuth(request, loginCtx)}
           />
-          <Route
-            path="reviews"
-            element={<Reviews />}
-            loader={async ({ request }) => await requireAuth(request)}
-          /> */}
+          */}
         </Route>
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
 
         <Route path="*" element={<NotFound />} />
       </Route>
