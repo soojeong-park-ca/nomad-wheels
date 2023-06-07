@@ -986,25 +986,25 @@ input::placeholder {
   max-width: 20rem;
 }
 
-.navbar {
+.page-navbar {
   background-color: #fffffe;
   padding-block: 2rem;
 }
-.navbar__flexbox {
+.page-navbar__flexbox {
   display: flex;
   align-items: center;
   column-gap: 1.5rem;
   row-gap: 0.5rem;
   flex-wrap: wrap;
 }
-.navbar a:link,
-.navbar a:visited {
+.page-navbar a:link,
+.page-navbar a:visited {
   width: fit-content;
   color: #2d334a;
   text-align: center;
 }
-.navbar a:hover,
-.navbar a:active {
+.page-navbar a:hover,
+.page-navbar a:active {
   text-decoration: underline;
   text-underline-offset: 3px;
   border: none;
