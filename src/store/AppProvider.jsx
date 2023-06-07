@@ -15,19 +15,6 @@ const CLICK_RIGHT_TESTIMONIAL = "CLICK_RIGHT_TESTIMONIAL";
 const RESET_TESTIMONIAL_INDEX_TO_0 = "RESET_TESTIMONIAL_INDEX_TO_0";
 const RESET_TESTIMONIAL_INDEX_TO_MAX = "RESET_TESTIMONIAL_INDEX_TO_MAX";
 
-// for signup form validation
-const NAME_IS_VALID = "NAME_IS_VALID";
-const NAME_IS_INVALID = "NAME_IS_NOT_VALID";
-const EMAIL_IS_VALID = "EMAIL_IS_VALID";
-const EMAIL_IS_INVALID = "EMAIL_IS_NOT_VALID";
-
-const FORM_IS_VALID = "FORM_IS_VALID";
-const FORM_IS_INVALID = "FORM_IS_NOT_VALID";
-const SUBMIT_SIGNUP_FORM = "SUBMIT_SIGNUP_FORM";
-
-const CHANGE_NAME_VAL = "CHANGE_NAME_VAL";
-const CHANGE_EMAIL_VAL = "CHANGE_EMAIL_VAL";
-
 const initialState = {
   // for mobile / desktop versions of nav
   mobile: window.innerWidth <= 768,
@@ -44,24 +31,6 @@ const initialState = {
   onRightTestimonialClick: () => {},
   onResetTestimonialTo0: () => {},
   onResetTestimonialToMax: () => {},
-
-  // for signup form validation
-  nameIsValid: false,
-  emailIsValid: false,
-  onNameValid: () => {},
-  onEmailValid: () => {},
-  onNameInvalid: () => {},
-  onEmailInvalid: () => {},
-
-  formIsValid: false,
-  onFormValid: () => {},
-  onFormInvalid: () => {},
-
-  signupName: "",
-  signupEmail: "",
-  onNameValChange: () => {},
-  onEmailValChange: () => {},
-  onSignUpFormSubmit: () => {},
 };
 
 const reducer = (state, action) => {
