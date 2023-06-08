@@ -10,6 +10,11 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+
+  @include m.respondMin(v.$laptop-xl) {
+    gap: 0;
+    justify-content: space-between;
+  }
 }
 
 .hostvan-tile {
@@ -44,7 +49,8 @@
 
   @include m.respondMin(v.$mobile-l) {
     width: 100%;
-    max-width: 25rem;
+    // max-width: 25rem;
+    max-width: 23.75rem;
 
     display: grid;
     grid-template-columns: 9rem auto;

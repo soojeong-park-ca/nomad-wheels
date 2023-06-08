@@ -379,7 +379,8 @@ input {
   color: v.$color-stars;
 }
 
-.hostvan-tile {
+.hostvan-tile,
+.host-dashboard {
   .btn--detail {
     text-align: right;
     text-decoration-line: underline;
