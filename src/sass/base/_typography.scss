@@ -251,11 +251,11 @@ input {
   font-size: v.$font-s-l;
 
   @include m.respondMin(v.$laptop) {
-    font-size: v.$font-s-xl;
+    // font-size: v.$font-s-xl;
   }
 
   @include m.respondMin(v.$laptop-l) {
-    font-size: v.$font-s-2xl;
+    // font-size: v.$font-s-2xl;
 
     &.margin-bottom-s {
       margin-bottom: 3rem;
@@ -264,23 +264,25 @@ input {
 }
 
 .vans-heading-secondary {
+  color: v.$color-text-sub;
   font-size: v.$font-s-xs-2;
+  font-weight: v.$font-w-m;
 
   @include m.respondMin(v.$laptop) {
     font-size: v.$font-s-s;
   }
 
   @include m.respondMin(v.$laptop-m) {
-    font-size: v.$font-s-m;
+    // font-size: v.$font-s-m;
   }
 
-  @include m.respondMin(v.$laptop-l) {
-    font-size: v.$font-s-l;
-  }
+  // @include m.respondMin(v.$laptop-l) {
+  //   font-size: v.$font-s-l;
+  // }
 
-  @include m.respondMin(v.$laptop-xl) {
-    font-size: v.$font-s-xl;
-  }
+  // @include m.respondMin(v.$laptop-xl) {
+  //   font-size: v.$font-s-xl;
+  // }
 }
 
 .van-tile {
@@ -313,13 +315,13 @@ input {
     }
   }
 
-  @include m.respondMin(v.$laptop-xl) {
-    &__info {
-      .paragraph {
-        font-size: v.$font-s-m;
-      }
-    }
-  }
+  // @include m.respondMin(v.$laptop-xl) {
+  //   &__info {
+  //     .paragraph {
+  //       font-size: v.$font-s-m;
+  //     }
+  //   }
+  // }
 }
 
 .btn--filter {
@@ -330,9 +332,9 @@ input {
     font-size: v.$font-s-s;
   }
 
-  @include m.respondMin(v.$laptop-m) {
-    font-size: v.$font-s-m;
-  }
+  // @include m.respondMin(v.$laptop-m) {
+  //   font-size: v.$font-s-m;
+  // }
 }
 
 .btn--van-type {
@@ -343,9 +345,9 @@ input {
     font-size: v.$font-s-s;
   }
 
-  @include m.respondMin(v.$laptop-m) {
-    font-size: v.$font-s-m;
-  }
+  // @include m.respondMin(v.$laptop-m) {
+  //   font-size: v.$font-s-m;
+  // }
 }
 
 /////////////////////////////////////////

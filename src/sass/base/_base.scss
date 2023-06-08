@@ -129,9 +129,9 @@ button {
     padding: 0.25rem 1.5rem;
   }
 
-  @include m.respondMin(v.$laptop-m) {
-    padding: 0.5rem 2rem;
-  }
+  // @include m.respondMin(v.$laptop-m) {
+  //   padding: 0.5rem 2rem;
+  // }
 }
 
 .btn--van-type {

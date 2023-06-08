@@ -28,7 +28,7 @@
   &-img {
     width: 100%;
     border-radius: 5px;
-    margin-block: 2.5rem 3rem;
+    margin-top: 2.5rem;
     margin-right: auto;
   }
 
@@ -100,7 +100,7 @@
     }
 
     @include m.respondMin(v.$laptop-m) {
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-columns: 1fr 2fr;
 
       &-content {
         display: flex;

@@ -17,6 +17,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
+  // added
+  justify-content: space-between;
 
   column-gap: 1.25rem;
   row-gap: 2rem;
@@ -24,6 +26,9 @@
   @include m.respondMin(v.$laptop) {
     column-gap: 2.5rem;
     row-gap: 4rem;
+
+    // added
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @include m.respondMin(v.$laptop-l) {
@@ -35,6 +40,8 @@
 .van-tile {
   width: 100%;
   height: 100%;
+  // added
+  max-width: 31.25rem;
 
   &__link {
     width: 100%;
