@@ -517,6 +517,11 @@ input::placeholder {
   display: none;
 }
 
+.max-width {
+  width: 100%;
+  max-width: 80rem;
+}
+
 .app-padding-inline-default {
   padding-inline: 7%;
 }
@@ -559,11 +564,6 @@ input::placeholder {
 
 .center-hori {
   margin: 0 auto;
-}
-
-.max-width {
-  width: 100%;
-  max-width: 80rem;
 }
 
 .input--invalid {
@@ -1489,7 +1489,6 @@ section {
 .host-income__graph {
   width: 100%;
   max-width: 31.25rem;
-  height: 100%;
   display: flex;
   position: relative;
 }
@@ -1520,55 +1519,27 @@ section {
   justify-content: space-between;
   padding: 2rem;
 }
-
-/*
-.info-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-
-  p {
-    // color: var(--color-gray-2);
-
-    span {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      font-weight: 700;
-    }
+@media screen and (min-width: 63.9375em) {
+  .host-income {
+    padding-inline: 7%;
   }
-
-  .income-heading-tertiary {
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 0.9;
+  .host-income .desktop-layout {
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-
-  .transaction {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    margin-bottom: 31px;
-    padding: 35px 29px;
-    border-radius: 6px;
-
-    .income-heading-tertiary {
-      font-size: 2.25rem;
-      font-weight: 600;
-      line-height: 0.9;
-    }
-
-    p {
-      font-size: 1.25rem;
-      font-weight: 500;
-      line-height: 1.6;
-      color: var(--color-gray-2);
-    }
+  .host-income__main {
+    padding-inline: 0;
+    margin-bottom: 0 !important;
+  }
+  .host-income__transactions {
+    border-radius: 5px;
+    padding-bottom: 4rem;
   }
 }
-*/
+
 .login {
   background-color: #fffffe;
   margin-top: 4rem;

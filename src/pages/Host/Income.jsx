@@ -10,47 +10,52 @@ export default function Income() {
 
   return (
     <section id="host-income" className="host-income">
-      <div className="app-padding-inline-default margin-bottom-xl">
-        <CenteredMaxWidthBox>
-          <div className="host-income__flexbox">
-            <div className="host-income__info">
-              <h1 className="income-heading-primary">Income</h1>
-              <p>
-                Last <span>30 days</span>
-              </p>
-              <h2 className="income-heading-secondary">$2,260</h2>
-            </div>
-
-            <div className="host-income__graph">
-              <IncomeBarGraph
-                options={{ responsive: true, maintainAspectRatio: false }}
-              />
-            </div>
-          </div>
-        </CenteredMaxWidthBox>
-      </div>
-
-      <div className="host-income__transactions">
-        <div className="app-padding-inline-default">
+      <div className="desktop-layout">
+        <div className="host-income__main app-padding-inline-default margin-bottom-xl">
           <CenteredMaxWidthBox>
-            <div className="transactions-title">
-              <h3 className="income-heading-tertiary">
-                Your transactions ({transactionsData.length})
-              </h3>
-              <p>
-                Last <span>30 days</span>
-              </p>
-            </div>
+            <div className="host-income__flexbox">
+              <div className="host-income__info">
+                <h1 className="income-heading-primary">Income</h1>
+                <p>
+                  Last <span>30 days</span>
+                </p>
+                <h2 className="income-heading-secondary">$2,260</h2>
+              </div>
 
-            <div className="transactions-detail">
-              {transactionsData.map(item => (
-                <div key={item.id} className="transaction">
-                  <h3 className="income-heading-tertiary">${item.amount}</h3>
-                  <p>{item.date}</p>
-                </div>
-              ))}
+              <div className="host-income__graph">
+                <IncomeBarGraph
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                  }}
+                />
+              </div>
             </div>
           </CenteredMaxWidthBox>
+        </div>
+
+        <div className="host-income__transactions">
+          <div className="host-income__transactions-padding app-padding-inline-default">
+            <CenteredMaxWidthBox>
+              <div className="transactions-title">
+                <h3 className="income-heading-tertiary">
+                  Your transactions ({transactionsData.length})
+                </h3>
+                <p>
+                  Last <span>30 days</span>
+                </p>
+              </div>
+
+              <div className="transactions-detail">
+                {transactionsData.map(item => (
+                  <div key={item.id} className="transaction">
+                    <h3 className="income-heading-tertiary">${item.amount}</h3>
+                    <p>{item.date}</p>
+                  </div>
+                ))}
+              </div>
+            </CenteredMaxWidthBox>
+          </div>
         </div>
       </div>
     </section>

@@ -5,6 +5,12 @@
   display: none;
 }
 
+// MAX-WIDTH
+.max-width {
+  width: 100%;
+  max-width: 80rem;
+}
+
 // PADDING
 .app-padding-inline-default {
   padding-inline: 7%;
@@ -44,12 +50,6 @@
 // CENTER
 .center-hori {
   margin: 0 auto;
-}
-
-// MAX-WIDTH
-.max-width {
-  width: 100%;
-  max-width: 80rem;
 }
 
 // INPUT INVALID

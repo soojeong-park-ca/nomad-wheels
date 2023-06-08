@@ -31,7 +31,6 @@
   &__graph {
     width: 100%;
     max-width: 31.25rem;
-    height: 100%;
 
     display: flex;
 
@@ -74,53 +73,27 @@
       padding: 2rem;
     }
   }
-}
 
-/*
-.info-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
+  @include m.respondMin(v.$laptop-m) {
+    padding-inline: 7%;
 
-  p {
-    // color: var(--color-gray-2);
+    .desktop-layout {
+      max-width: 80rem;
+      margin: 0 auto;
+      margin-bottom: 8rem;
 
-    span {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      font-weight: 700;
-    }
-  }
-
-  .income-heading-tertiary {
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 0.9;
-  }
-
-  .transaction {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    margin-bottom: 31px;
-    padding: 35px 29px;
-    border-radius: 6px;
-
-    .income-heading-tertiary {
-      font-size: 2.25rem;
-      font-weight: 600;
-      line-height: 0.9;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
-    p {
-      font-size: 1.25rem;
-      font-weight: 500;
-      line-height: 1.6;
-      color: var(--color-gray-2);
+    &__main {
+      padding-inline: 0;
+      margin-bottom: 0 !important;
+    }
+
+    &__transactions {
+      border-radius: 5px;
+      padding-bottom: 4rem;
     }
   }
 }
-*/
