@@ -43,6 +43,23 @@
   .btn--van-type {
     max-width: 7rem;
   }
+
+  @include m.respondMin(v.$laptop) {
+    max-width: 50rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__content {
+      max-width: 30rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
 }
 
 .hostvan-nav--active {

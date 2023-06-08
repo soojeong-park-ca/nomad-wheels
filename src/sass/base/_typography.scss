@@ -393,6 +393,14 @@ input {
   line-height: 1;
 }
 
+.hostvan-detail__text {
+  @include m.respondMin(v.$laptop) {
+    h1 {
+      font-size: v.$font-s-m;
+    }
+  }
+}
+
 .hostvan__pricing .paragraph {
   font-size: v.$font-s-m;
   line-height: 0.9;
@@ -400,6 +408,14 @@ input {
   span {
     font-size: v.$font-s-xs;
     line-height: 1.3;
+  }
+}
+
+.hostvan__info .paragraph {
+  font-size: v.$font-s-2xs;
+
+  span {
+    font-weight: v.$font-w-xl;
   }
 }
 
