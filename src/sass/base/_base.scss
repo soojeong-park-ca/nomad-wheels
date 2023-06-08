@@ -200,3 +200,23 @@ button {
     opacity: 0;
   }
 }
+
+// vans, hostvans
+.btn--van-type {
+  max-width: 7rem;
+  margin: 0;
+  margin-right: auto;
+}
+
+.vans-heading-primary {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vans-heading-secondary {
+  margin-bottom: 1rem;
+}
+
+button {
+  max-width: 15rem;
+}

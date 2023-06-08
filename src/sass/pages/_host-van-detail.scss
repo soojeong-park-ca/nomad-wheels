@@ -1,5 +1,52 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.hostvan-detail-container {
+  background-color: v.$color-secondary;
+
+  .page-navbar {
+    padding-inline: 0;
+    padding-block: 0.5rem;
+  }
+}
+
 .hostvan-detail {
+  margin-top: 2.5rem;
+  background-color: v.$color-white;
+  border-radius: 5px;
+  padding: 1.25rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  &__text {
+    .btn--van-type {
+      margin: 0;
+    }
+  }
+
   .btn--van-type {
     max-width: 7rem;
   }
+}
+
+.hostvan-nav--active {
+  font-weight: v.$font-w-xl;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.host-vans {
+  background-color: v.$color-secondary;
+  padding-block: 4rem 8rem;
+
+  &-title {
+    margin-bottom: 2rem;
+  }
+}

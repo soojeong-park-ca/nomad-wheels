@@ -17,7 +17,7 @@ export default function HostVans() {
   const dataPromise = useLoaderData();
 
   return (
-    <section>
+    <section className="host-vans">
       <div className="app-padding-inline-default">
         <CenteredMaxWidthBox>
           <h1 className="host-vans-title">Your listed vans</h1>

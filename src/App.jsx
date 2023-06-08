@@ -21,6 +21,7 @@ import HostVans, { loader as hostVansLoader } from "./pages/Host/HostVans";
 import HostVanDetail, {
   loader as hostVanDetailLoader,
 } from "./pages/Host/HostVanDetail";
+import HostVanInfo from "./pages/Host/HostVanInfo";
 import Reviews from "./pages/Host/Reviews";
 
 import NotFound from "./components/NotFound";
@@ -70,11 +71,12 @@ const router = createBrowserRouter(
           loader={hostVanDetailLoader}
           errorElement={<Error />}
         >
-          {/* <Route
+          <Route
             index
             element={<HostVanInfo />}
-            loader={async ({ request }) => await requireAuth(request, loginCtx)}
+            loader={async ({ request }) => await requireAuth(request)}
           />
+          {/*
           <Route
             path="pricing"
             element={<HostVanPricing />}

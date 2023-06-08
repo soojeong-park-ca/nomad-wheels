@@ -22,21 +22,21 @@ export default function HostVanDetail() {
     return (
       <div className="hostvan-detail">
         <div className="hostvan-detail__content">
-          <img
-            className="hostvan-detail__img"
-            src={currentHostVan.imageUrl}
-            alt={`${currentHostVan.name} Van`}
-          />
+          <div className="hostvan-detail__img-container">
+            <img
+              className="hostvan-detail__img"
+              src={currentHostVan.imageUrl}
+              alt={`${currentHostVan.name} Van`}
+            />
+          </div>
           <div className="hostvan-detail__text">
             <div className={`btn--van-type btn--${currentHostVan.type}-fixed`}>
               {`${currentHostVan.type
                 .slice(0, 1)
                 .toUpperCase()}${currentHostVan.type.slice(1)}`}
             </div>
-            <h1 className="hostvan-detail-heading-primary">
-              {currentHostVan.name}
-            </h1>
-            <h2 className="hostvan-detail-heading-secondary">
+            <h1 className="vans-heading-primary">{currentHostVan.name}</h1>
+            <h2 className="vans-heading-secondary">
               ${currentHostVan.price}
               <span>/day</span>
             </h2>
@@ -44,11 +44,31 @@ export default function HostVanDetail() {
         </div>
 
         <PageNav>
-          <NavLink to="." end>
+          <NavLink
+            to="."
+            end
+            className={({ isActive }) =>
+              isActive ? "hostvan-nav--active" : ""
+            }
+          >
             Details
           </NavLink>
-          <NavLink to="pricing">Pricing</NavLink>
-          <NavLink to="photos">Photos</NavLink>
+          <NavLink
+            to="pricing"
+            className={({ isActive }) =>
+              isActive ? "hostvan-nav--active" : ""
+            }
+          >
+            Pricing
+          </NavLink>
+          <NavLink
+            to="photos"
+            className={({ isActive }) =>
+              isActive ? "hostvan-nav--active" : ""
+            }
+          >
+            Photos
+          </NavLink>
         </PageNav>
 
         <Outlet context={{ currentHostVan }} />
