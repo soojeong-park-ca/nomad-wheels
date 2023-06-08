@@ -179,10 +179,6 @@ button {
   margin-bottom: 1rem;
 }
 
-.vans-heading-secondary {
-  margin-bottom: 1rem;
-}
-
 button {
   max-width: 15rem;
 }
@@ -1411,25 +1407,26 @@ input::placeholder {
 .van-tile__info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 @media screen and (min-width: 47.9375em) {
   .van-tile__grid {
     row-gap: 1rem;
   }
-  .van-tile__info {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .van-tile__info .heading-secondary {
+  .van-tile__info .vans-heading-secondary {
     margin-bottom: 0;
     margin-right: auto;
+    text-align: left;
   }
 }
 @media screen and (min-width: 63.9375em) {
   .van-tile__grid {
     row-gap: 1.25rem;
+  }
+  .van-tile__info {
+    flex-direction: row;
+    align-items: center;
   }
 }
 

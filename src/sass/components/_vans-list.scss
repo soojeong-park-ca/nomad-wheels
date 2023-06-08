@@ -63,7 +63,7 @@
   &__info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
   }
 
@@ -73,12 +73,11 @@
     }
 
     &__info {
-      flex-direction: row;
-      justify-content: space-between;
-
-      .heading-secondary {
+      .vans-heading-secondary {
         margin-bottom: 0;
         margin-right: auto;
+
+        text-align: left;
       }
     }
   }
@@ -86,6 +85,11 @@
   @include m.respondMin(v.$laptop-m) {
     &__grid {
       row-gap: 1.25rem;
+    }
+
+    &__info {
+      flex-direction: row;
+      align-items: center;
     }
   }
 }
