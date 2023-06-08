@@ -87,7 +87,7 @@ export default function HostVanDetail() {
               errorElement={<Error />}
             >
               {loadedHostVan => {
-                console.log("loadedHostVan: ", loadedHostVan);
+                // console.log("loadedHostVan: ", loadedHostVan);
 
                 return renderHostVanDetail(loadedHostVan);
               }}
