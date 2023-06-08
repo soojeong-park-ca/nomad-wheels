@@ -382,6 +382,8 @@ input {
 .hostvan-tile {
   .btn--detail {
     text-align: right;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
   }
 }
 

@@ -90,39 +90,39 @@
   }
 }
 
-.hostvans-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+// .hostvans-list {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+// }
 
-.hostvan-tile {
-  background-color: v.$color-white;
-  border-radius: 5px;
+// .hostvan-tile {
+//   background-color: v.$color-white;
+//   border-radius: 5px;
 
-  display: flex;
-  flex-direction: column;
+//   display: flex;
+//   flex-direction: column;
 
-  padding: 1.5rem;
+//   padding: 1.5rem;
 
-  &__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+//   &__img {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    margin-bottom: 1rem;
+//     margin-bottom: 1rem;
 
-    img {
-      width: 100%;
-      border-radius: 5px;
-    }
-  }
+//     img {
+//       width: 100%;
+//       border-radius: 5px;
+//     }
+//   }
 
-  &__detail {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+//   &__detail {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
 
-    margin-bottom: 1rem;
-  }
-}
+//     margin-bottom: 1rem;
+//   }
+// }
