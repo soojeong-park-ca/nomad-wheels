@@ -94,7 +94,7 @@ export default function SignUp() {
                   id="signup-name"
                   name="name"
                   type="text"
-                  placeholder="Full name"
+                  placeholder="Jane Doe"
                   value={values.name}
                   onChange={setName}
                   className={errors.name ? "input--invalid" : ""}
@@ -112,7 +112,7 @@ export default function SignUp() {
                   id="signup-email"
                   name="email"
                   type="email"
-                  placeholder="Email address"
+                  placeholder="email@example.com"
                   value={values.email}
                   onChange={setEmail}
                   className={errors.email ? "input--invalid" : ""}
