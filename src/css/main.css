@@ -1689,7 +1689,6 @@ section {
 .host-reviews__graph {
   width: 100%;
   max-width: 31.25rem;
-  height: 100%;
   display: flex;
   position: relative;
 }
@@ -1715,6 +1714,27 @@ section {
   background-color: #fffffe;
   border-radius: 5px;
   padding: 2rem 1rem 1rem;
+}
+@media screen and (min-width: 63.9375em) {
+  .host-reviews {
+    padding-inline: 7%;
+  }
+  .host-reviews .desktop-layout {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .host-reviews__main {
+    padding-inline: 0;
+    margin-bottom: 0 !important;
+  }
+  .host-reviews__detail {
+    border-radius: 5px;
+    padding-bottom: 4rem;
+  }
 }
 
 .host-review-content {

@@ -2,6 +2,7 @@ import CenteredMaxWidthBox from "../../components/CenteredMaxWidthBox";
 import IncomeBarGraph from "../../components/IncomeGraph";
 
 export default function Income() {
+  // Example Transactions Data
   const transactionsData = [
     { amount: 720, date: "Jan 3, '23", id: "1" },
     { amount: 560, date: "Dec 12, '22", id: "2" },
