@@ -22,6 +22,8 @@ import HostVanDetail, {
   loader as hostVanDetailLoader,
 } from "./pages/Host/HostVanDetail";
 import HostVanInfo from "./pages/Host/HostVanInfo";
+import HostVanPricing from "./pages/Host/HostVanPricing";
+import HostVanPhotos from "./pages/Host/HostVanPhotos";
 import Reviews from "./pages/Host/Reviews";
 
 import NotFound from "./components/NotFound";
@@ -76,18 +78,16 @@ const router = createBrowserRouter(
             element={<HostVanInfo />}
             loader={async ({ request }) => await requireAuth(request)}
           />
-          {/*
           <Route
             path="pricing"
             element={<HostVanPricing />}
-            loader={async ({ request }) => await requireAuth(request, loginCtx)}
+            loader={async ({ request }) => await requireAuth(request)}
           />
           <Route
             path="photos"
             element={<HostVanPhotos />}
-            loader={async ({ request }) => await requireAuth(request, loginCtx)}
+            loader={async ({ request }) => await requireAuth(request)}
           />
-          */}
         </Route>
         <Route
           path="reviews"

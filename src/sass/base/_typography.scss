@@ -375,7 +375,6 @@ input {
 }
 
 .icon-star {
-  // color: v.$color-text-main;
   color: v.$color-stars;
 }
 
@@ -392,6 +391,16 @@ input {
   font-size: v.$font-s-m;
   font-weight: 700;
   line-height: 1;
+}
+
+.hostvan__pricing .paragraph {
+  font-size: v.$font-s-m;
+  line-height: 0.9;
+
+  span {
+    font-size: v.$font-s-xs;
+    line-height: 1.3;
+  }
 }
 
 /////////////////////////////////////////
